@@ -7,6 +7,8 @@
     "dev:package": "vite --mode package",
     "build": "tsc --noEmit && vite build",
     "build:package": "tsc --noEmit --project tsconfig.package.json && vite build --mode package",
+    "lint": "eslint src @types vite.config.ts",
+    "lint:fix": "eslint src @types vite.config.ts --fix",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,15 +17,20 @@
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-hook-form": "^7.88.0",
-    "tailwind-variants": "^3.3.1"
+    "tailwind-variants": "^3.3.1",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.6.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.1",
+    "@typescript-eslint/parser": "^8.70.1",
     "@vitejs/plugin-react": "^6.0.2",
-    "tailwindcss": "^4.3.3",
+    "eslint": "^10.11.0",
+    "eslint-plugin-perfectionist": "^5.12.0",
     "typescript": "^6.0.3",
     "vite": "^8.3.0"
   }
