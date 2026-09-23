@@ -1,6 +1,6 @@
 import { Title } from "./Title";
-import { uiSections } from "../styles/ui-sections";
-import { uiVariations } from "../styles/ui-variations";
+import { uiSections } from "./style/ui-sections";
+import { uiVariations } from "./style/ui-variations";
 
 const variations = [
     { index: "A", title: "Padrão", description: "Visual principal do componente." },

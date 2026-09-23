@@ -1,6 +1,6 @@
 import { Props } from "../context/Props";
 import { Preview } from "../context/Preview";
-import { uiContent } from "../styles/ui-content";
+import { uiContent } from "./style/ui-content";
 import { Variations } from "../context/Variations";
 import { PanelContentProps } from "../@types/panel";
 import { componentId } from "../../catalog/components";

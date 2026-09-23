@@ -1,4 +1,4 @@
-import { uiSections } from "../styles/ui-sections";
+import { uiSections } from "./style/ui-sections";
 import { ContextTitleProps } from "../@types/context";
 
 /**

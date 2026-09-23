@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { useState } from "react";
-import { uiSidebar } from "../styles/ui-sidebar";
+import { uiSidebar } from "./style/ui-sidebar";
 import { PanelSidebarProps } from "../@types/panel";
 import { componentNames } from "../../catalog/components";
 

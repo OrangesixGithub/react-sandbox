@@ -1,5 +1,5 @@
 import logo from "@assets/orange.png";
-import { uiHeader } from "../styles/ui-header";
+import { uiHeader } from "./style/ui-header";
 import { componentNames } from "../../catalog/components";
 
 /**
@@ -19,7 +19,7 @@ export function Header() {
                     className="h-12 w-12 object-contain"
                     src={logo}/>
                 <div>
-                    <span className={uiHeader.eyebrow}>OrangeSix / REACT</span>
+                    <span className={uiHeader.eyebrow}>OrangeSix / REACT v{__ORANGESIX_VERSION__}</span>
                     <strong className={uiHeader.title}>
                         Laboratório de components UI
                     </strong>

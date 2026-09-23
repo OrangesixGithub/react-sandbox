@@ -10,7 +10,7 @@ import type { ComponentName } from "../catalog/components";
  * Módulo (Sandbox) - Catálogo de componentes
  */
 export function App() {
-    const [selected, setSelected] = useState<ComponentName>("Button");
+    const [selected, setSelected] = useState<ComponentName>("Box");
     /*
     |------------------------------------------
     | render() - Renderização do componente

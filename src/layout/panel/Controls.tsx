@@ -1,4 +1,4 @@
-import { uiControlField, uiControls } from "../styles/ui-controls";
+import { uiControlField, uiControls } from "./style/ui-controls";
 
 /**
  * Módulo (Sandbox) - Controles do playground

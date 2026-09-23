@@ -6,7 +6,7 @@ Para alterações feitas por IA, siga o [padrão de escrita](AGENTS.md).
 
 No momento, a página contém o layout do catálogo: navegação, busca e espaços reservados para prévia, variações, props e controles. A exibição dos componentes será definida em uma próxima etapa.
 
-O código do layout do ambiente fica em `src/layout`: `App.tsx` monta a página e guarda o componente selecionado, `panel/` contém os painéis de cabeçalho, navegação, conteúdo e controles, `context/` contém prévia, variações e props, e `styles/` reúne os utilitários da interface. As tipagens de props ficam em `src/layout/@types/context.d.ts` e `src/layout/@types/panel.d.ts`, na raiz. As imagens e outros arquivos estáticos ficam em `assets/`, fora de `src`. O alias `@assets/*` permite importá-los no código; o favicon é referenciado diretamente no `index.html`. O catálogo de componentes fica em `src/catalog`, e `src/main.tsx` inicializa a aplicação.
+O código do layout do ambiente fica em `src/layout`: `App.tsx` monta a página e guarda o componente selecionado, `panel/` contém os painéis de cabeçalho, navegação, conteúdo e controles, e `context/` contém prévia, variações e props. Cada uma dessas duas pastas mantém seus estilos em `style/`; `src/layout/styles/` guarda o estilo da estrutura principal. As tipagens de props ficam em `src/layout/@types/context.d.ts` e `src/layout/@types/panel.d.ts`. As imagens e outros arquivos estáticos ficam em `assets/`, fora de `src`. O alias `@assets/*` permite importá-los no código; o favicon é referenciado diretamente no `index.html`. O catálogo de componentes fica em `src/catalog`, e `src/main.tsx` inicializa a aplicação.
 
 ## Desenvolvimento
 
@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-O modo padrão resolve `@orangesix/react/*` para `../react/src/*`, permitindo HMR ao editar a biblioteca. Todo o layout do sandbox usa utilitários Tailwind 4. `src/layout/styles.css` define somente os tokens do Tailwind em `@theme` (cores, fontes e breakpoints); os arquivos `src/layout/styles/ui-*.ts` agrupam utilitários por área do layout. Não há regras CSS próprias nem Sass.
+O modo padrão resolve `@orangesix/react/*` para `../react/src/*`, permitindo HMR ao editar a biblioteca. Todo o layout do sandbox usa utilitários Tailwind 4. `src/layout/styles.css` define somente os tokens do Tailwind em `@theme` (cores, fontes e breakpoints); os arquivos `ui-*.ts` de `context/style`, `panel/style` e `layout/styles` agrupam utilitários por área. Não há regras CSS próprias nem Sass.
 
 Convenção do layout: `className` com mais de três utilitários vai para o arquivo `ui-*` correspondente. Use `tv` para estilos com variantes e `clsx` para combinar classes condicionais pequenas. Classes de até três utilitários podem permanecer no JSX. A barra de rolagem da página é declarada no `index.html`, fora dos componentes React.
 

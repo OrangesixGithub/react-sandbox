@@ -1,6 +1,6 @@
 import { Title } from "./Title";
-import { uiProps } from "../styles/ui-props";
-import { uiSections } from "../styles/ui-sections";
+import { uiProps } from "./style/ui-props";
+import { uiSections } from "./style/ui-sections";
 import type { ContextSelectionProps } from "../@types/context";
 
 /**
