@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@assets/*": ["./assets/*"]
+      "@assets/*": ["./assets/*"],
+      "@orangesix/react/*": ["../react/dist/*"]
     }
   }
 }

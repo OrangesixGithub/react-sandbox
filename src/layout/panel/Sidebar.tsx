@@ -1,8 +1,9 @@
 import { clsx } from "clsx";
 import { useState } from "react";
+import logo from "@assets/orange.png";
 import { uiSidebar } from "./style/ui-sidebar";
 import { PanelSidebarProps } from "../@types/panel";
-import { componentNames } from "../../catalog/components";
+import { componentIcons, componentNames } from "../../catalog/components";
 
 /**
  * Módulo (Sandbox) - Navegação de componentes
@@ -23,12 +24,21 @@ export function Sidebar(props: PanelSidebarProps) {
         <aside
             aria-label="Navegação de componentes"
             className={styles.root()}>
+            <div className={styles.brand()}>
+                <img
+                    alt=""
+                    className={styles.logo()}
+                    src={logo}/>
+                <span className={styles.brandName()}>OrangeSix<span className="text-accent">.</span></span>
+            </div>
             <div className={styles.intro()}>
-                <span className={styles.eyebrow()}>CATÁLOGO</span>
-                <h2 className={styles.heading()}>Componentes</h2>
-                <p className={styles.description()}>
-                    Explore a biblioteca por componente.
-                </p>
+                <span className={styles.eyebrow()}>BIBLIOTECA</span>
+                <h2 className={styles.heading()}>
+                    <i
+                        aria-hidden="true"
+                        className={styles.headingIcon()}/>
+                    Componentes
+                </h2>
             </div>
             <label className={styles.search()}>
                 <i
@@ -52,14 +62,22 @@ export function Sidebar(props: PanelSidebarProps) {
                             key={name}
                             type="button"
                             onClick={() => props.onSelect(name)}>
-                            <span>{name}</span>
-                            <i
-                                aria-hidden="true"
-                                className={clsx(styles.arrow(), props.selected === name ? "text-accent" : "text-subtle")}/>
+                            <span className={styles.itemLabel()}>
+                                <i
+                                    aria-hidden="true"
+                                    className={clsx(styles.itemIcon(), componentIcons[name])}/>
+                                {name}
+                            </span>
                         </button>
                     ))
                 ) : <p className={styles.empty()}>Nenhum componente encontrado.</p>}
             </nav>
+            <div className={styles.footer()}>
+                <span className={styles.footerIcon()}><i
+                    aria-hidden="true"
+                    className="bi bi-code-square"/></span>
+                <span><strong className="block text-xs text-copy">Sandbox</strong><span>Ambiente de desenvolvimento</span></span>
+            </div>
         </aside>
     );
 }

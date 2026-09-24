@@ -17,7 +17,7 @@ export function Title(props: ContextTitleProps) {
                 <h2 className={uiSections.heading}
                     id={props.id}>{props.title}</h2>
             </div>
-            {props.aside && <span className="pb-0.5 text-[11px] text-muted">{props.aside}</span>}
+            {props.aside && <span className="pb-0.5 text-[12px] text-muted">{props.aside}</span>}
         </div>
     );
 }

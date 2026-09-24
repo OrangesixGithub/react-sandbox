@@ -1,4 +1,3 @@
-import logo from "@assets/orange.png";
 import { uiHeader } from "./style/ui-header";
 import { componentNames } from "../../catalog/components";
 
@@ -13,22 +12,23 @@ export function Header() {
     */
     return (
         <header className={uiHeader.root}>
-            <div className="flex items-center gap-3">
-                <img
-                    alt="Logo"
-                    className="h-12 w-12 object-contain"
-                    src={logo}/>
-                <div>
-                    <span className={uiHeader.eyebrow}>OrangeSix / REACT v{__ORANGESIX_VERSION__}</span>
-                    <strong className={uiHeader.title}>
-                        Laboratório de components UI
-                    </strong>
-                </div>
+            <div className={uiHeader.location}>
+                <span className={uiHeader.locationIcon}>
+                    <i
+                        aria-hidden="true"
+                        className="bi bi-grid-1x2"/>
+                </span>
+                <span className={uiHeader.title}>Laboratório de componentes</span>
             </div>
-            <div className={uiHeader.meta}>
-                <span className={uiHeader.status}/> Sandbox{" "}
-                <span className="text-subtle">/</span> {componentNames.length}{" "}
-                componentes
+            <div className={uiHeader.actions}>
+                <span className={uiHeader.meta}>
+                    <span className={uiHeader.status}/>
+                    Sandbox <span className="text-subtle">·</span> {componentNames.length} componentes
+                </span>
+                <span className={uiHeader.version}>v{__ORANGESIX_VERSION__}</span>
+                <span
+                    aria-label="OrangeSix"
+                    className={uiHeader.avatar}>OS</span>
             </div>
         </header>
     );

@@ -1,12 +1,30 @@
 import { Title } from "./Title";
+import type { ReactNode } from "react";
 import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
+import { ApiProps } from "../../components/api/Props";
 import type { ContextSelectionProps } from "../@types/context";
 
 /**
  * Módulo (Sandbox) - Referência de propriedades
  */
 export function Props(props: ContextSelectionProps) {
+    let component: ReactNode;
+
+    switch (props.selected) {
+        case "API":
+            component = <ApiProps/>;
+            break;
+        default:
+            component = (
+                <div className={uiProps.placeholder}>
+                    <i aria-hidden="true"
+                        className={uiProps.icon}/>
+                    <p>As propriedades de {props.selected} serão listadas aqui.</p>
+                </div>
+            );
+    }
+
     /*
     |------------------------------------------
     | render() - Renderização do componente
@@ -17,9 +35,9 @@ export function Props(props: ContextSelectionProps) {
             className={uiSections.section}>
             <Title
                 aside="API do componente"
-                category="REFERÊNCIA"
+                category="DOCUMENTAÇÃO DO COMPONENT"
                 id="props-title"
-                index="03"
+                index="02"
                 title="Props"/>
             <div className={uiProps.panel}>
                 <div className={uiProps.header}>
@@ -27,11 +45,7 @@ export function Props(props: ContextSelectionProps) {
                     <span>TIPO</span>
                     <span>DESCRIÇÃO</span>
                 </div>
-                <div className={uiProps.placeholder}>
-                    <i aria-hidden="true"
-                        className={uiProps.icon}/>
-                    <p>As propriedades de {props.selected} serão listadas aqui.</p>
-                </div>
+                {component}
             </div>
         </section>
     );

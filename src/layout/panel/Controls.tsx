@@ -1,9 +1,11 @@
+import type { PanelControlsProps } from "../@types/panel";
+import { ApiControls } from "../../components/api/Controls";
 import { uiControlField, uiControls } from "./style/ui-controls";
 
 /**
  * Módulo (Sandbox) - Controles do playground
  */
-export function Controls() {
+export function Controls(props: PanelControlsProps) {
     /*
     |------------------------------------------
     | render() - Renderização do componente
@@ -21,7 +23,11 @@ export function Controls() {
                 <p className="text-xs leading-relaxed text-muted">
                     Ajustes para testar as props da prévia.
                 </p>
-                <div className={uiControls.skeletonGrid}>
+                {props.selected === "API" ? (
+                    <ApiControls
+                        apiDemo={props.apiDemo}
+                        onApiDemoChange={props.onApiDemoChange}/>
+                ) : <div className={uiControls.skeletonGrid}>
                     {[0, 1, 2, 3].map((index) => (
                         <div className="grid gap-2"
                             key={index}>
@@ -30,15 +36,15 @@ export function Controls() {
                                 className={uiControlField({ type: index === 3 ? "switch" : "input" })}/>
                         </div>
                     ))}
-                </div>
-                <div className={uiControls.note}>
+                </div>}
+                {props.selected !== "API" && <div className={uiControls.note}>
                     <i aria-hidden="true"
                         className={uiControls.noteIcon}/>
                     <p className="text-[11px] leading-normal text-muted">
                         Os controles específicos de cada componente serão definidos junto
                         com as prévias.
                     </p>
-                </div>
+                </div>}
             </div>
         </aside>
     );

@@ -1,23 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #081624;
-  --color-header: #0b1c2c;
-  --color-sidebar: #0b1d2d;
-  --color-panel: #102638;
-  --color-panel-deep: #0e2233;
-  --color-border: #2d4960;
-  --color-border-soft: #223c52;
-  --color-accent: #ff9b55;
-  --color-accent-strong: #ff8b3d;
-  --color-copy: #e9f0f6;
-  --color-muted: #8da5b8;
-  --color-subtle: #7894a9;
-  --color-positive: #6bd2aa;
+  --color-canvas: #090a0f;
+  --color-header: #0e0f16;
+  --color-sidebar: #0c0e15;
+  --color-panel: #17181f;
+  --color-panel-deep: #1c1d26;
+  --color-border: #2d2e39;
+  --color-border-soft: #252630;
+  --color-accent: #8b5cf6;
+  --color-accent-strong: #a78bfa;
+  --color-copy: #f3f4f9;
+  --color-muted: #9aa1b2;
+  --color-subtle: #777e90;
+  --color-positive: #57c79a;
 
-  --font-sans: "Segoe UI", Arial, sans-serif;
-  --font-display: "Trebuchet MS", "Segoe UI", sans-serif;
-  --font-mono: Consolas, monospace;
+  --font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --font-display: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --font-mono: "Cascadia Code", Consolas, monospace;
 
   --breakpoint-tablet: 721px;
   --breakpoint-desktop: 1101px;

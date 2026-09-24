@@ -1,12 +1,24 @@
 import { Title } from "./Title";
+import type { ReactNode } from "react";
 import { uiPreview } from "./style/ui-preview";
 import { uiSections } from "./style/ui-sections";
-import type { ContextSelectionProps } from "../@types/context";
+import type { PanelContentProps } from "../@types/panel";
+import { ApiPreview } from "../../components/api/Preview";
 
 /**
  * Módulo (Sandbox) - Prévia do componente
  */
-export function Preview(props: ContextSelectionProps) {
+export function Preview(props: PanelContentProps) {
+    let componentPreview: ReactNode;
+
+    switch (props.selected) {
+        case "API":
+            componentPreview = <ApiPreview apiDemo={props.apiDemo}/>;
+            break;
+        default:
+            componentPreview = null;
+    }
+
     /*
     |------------------------------------------
     | render() - Renderização do componente
@@ -27,14 +39,7 @@ export function Preview(props: ContextSelectionProps) {
                     <span>100% · Desktop</span>
                 </div>
                 <div className={uiPreview.canvas}>
-                    <div className={uiPreview.placeholder}>
-                        <div aria-hidden="true"
-                            className={uiPreview.glyph}>
-                            <i className={uiPreview.glyphIcon}/>
-                        </div>
-                        <strong className="block text-[17px] text-white">{props.selected}</strong>
-                        <p className={uiPreview.description}>O componente selecionado será exibido neste espaço.</p>
-                    </div>
+                    {componentPreview}
                 </div>
             </div>
         </section>
