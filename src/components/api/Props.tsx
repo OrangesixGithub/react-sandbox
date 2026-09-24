@@ -1,5 +1,5 @@
-import { uiApiProps } from "./style/ui-props";
 import { TypeBadges } from "../TypeBadges";
+import { uiApiProps } from "./style/ui-props";
 
 const apiProps = [
     { name: "label", type: "string", description: "Texto do InputLabel; sem valor, o rótulo não é exibido." },
@@ -24,13 +24,16 @@ export function ApiProps() {
     return (
         <div>
             {apiProps.map((item) => (
-                <div className={uiApiProps.row}
+                <div
+                    className={uiApiProps.row}
                     key={item.name}>
                     <code className={uiApiProps.name}>{item.name}</code>
                     <span className={uiApiProps.type}>
                         <TypeBadges value={item.type}/>
                     </span>
-                    <span className={uiApiProps.description}>{item.description}</span>
+                    <span className={uiApiProps.description}>
+                        {item.description}
+                    </span>
                 </div>
             ))}
         </div>

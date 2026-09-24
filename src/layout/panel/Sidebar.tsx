@@ -3,7 +3,7 @@ import { useState } from "react";
 import logo from "@assets/orange.png";
 import { uiSidebar } from "./style/ui-sidebar";
 import { PanelSidebarProps } from "../@types/panel";
-import { componentIcons, componentNames } from "../../catalog/components";
+import { components, componentNames } from "../../components.ts";
 
 /**
  * Módulo (Sandbox) - Navegação de componentes
@@ -65,7 +65,7 @@ export function Sidebar(props: PanelSidebarProps) {
                             <span className={styles.itemLabel()}>
                                 <i
                                     aria-hidden="true"
-                                    className={clsx(styles.itemIcon(), componentIcons[name])}/>
+                                    className={clsx(styles.itemIcon(), components[name].icon)}/>
                                 {name}
                             </span>
                         </button>

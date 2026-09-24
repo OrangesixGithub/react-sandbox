@@ -1,7 +1,7 @@
 import { Props } from "../context/Props";
 import { Preview } from "../context/Preview";
 import { uiContent } from "./style/ui-content";
-import { componentId } from "../../catalog/components";
+import { componentId } from "../../components.ts";
 import type { PanelContentProps } from "../@types/panel";
 
 /**
@@ -32,6 +32,7 @@ export function Content(props: PanelContentProps) {
             </div>
             <Preview
                 apiDemo={props.apiDemo}
+                boxDemo={props.boxDemo}
                 selected={props.selected}/>
             <Props selected={props.selected}/>
         </main>

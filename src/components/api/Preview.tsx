@@ -34,7 +34,6 @@ export function ApiPreview(props: ApiPreviewProps) {
     return (
         <div className={uiApiPreview.card}>
             <div className={uiApiPreview.head}>
-                <span className={uiApiPreview.kicker}>@orangesix/react/api</span>
                 <strong className={uiApiPreview.title}>Helpers de campo</strong>
                 <p className={uiApiPreview.description}>O campo abaixo combina InputLabel, InputProps e InputFeedback da biblioteca.</p>
             </div>

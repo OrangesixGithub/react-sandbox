@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
 import { ApiProps } from "../../components/api/Props";
+import { BoxProps } from "../../components/box/Props";
 import type { ContextSelectionProps } from "../@types/context";
 
 /**
@@ -14,6 +15,9 @@ export function Props(props: ContextSelectionProps) {
     switch (props.selected) {
         case "API":
             component = <ApiProps/>;
+            break;
+        case "Box":
+            component = <BoxProps/>;
             break;
         default:
             component = (

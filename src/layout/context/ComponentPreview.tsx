@@ -1,5 +1,6 @@
 import type { PanelContentProps } from "../@types/panel";
 import { ApiPreview } from "../../components/api/Preview";
+import { BoxPreview } from "../../components/box/Preview";
 
 /**
  * Módulo (Sandbox) - Conteúdo compartilhado das prévias
@@ -14,6 +15,8 @@ export function ComponentPreview(props: PanelContentProps) {
         <>
             {props.selected === "API"
                 && <ApiPreview apiDemo={props.apiDemo}/>}
+            {props.selected === "Box"
+                && <BoxPreview boxDemo={props.boxDemo}/>}
         </>
     );
 }

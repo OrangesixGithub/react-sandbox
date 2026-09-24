@@ -2,6 +2,7 @@ import { Title } from "./Title";
 import { useEffect, useRef } from "react";
 import { uiPreview } from "./style/ui-preview";
 import { uiSections } from "./style/ui-sections";
+import { components } from "../../components.ts";
 import { ComponentPreview } from "./ComponentPreview";
 import type { PanelContentProps } from "../@types/panel";
 
@@ -10,15 +11,23 @@ import type { PanelContentProps } from "../@types/panel";
  */
 export function Preview(props: PanelContentProps) {
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const showIframe = components[props.selected].iframe;
 
     function sendPreview() {
+        if (!showIframe) {
+            return;
+        }
         iframeRef.current?.contentWindow?.postMessage({
             type: "sandbox-preview",
-            payload: { apiDemo: props.apiDemo, selected: props.selected },
+            payload: { apiDemo: props.apiDemo, boxDemo: props.boxDemo, selected: props.selected },
         }, window.location.origin);
     }
 
     useEffect(() => {
+        if (!showIframe) {
+            return;
+        }
+
         function receiveReady(event: MessageEvent) {
             if (event.source === iframeRef.current?.contentWindow && event.origin === window.location.origin && event.data?.type === "sandbox-preview-ready") {
                 sendPreview();
@@ -28,7 +37,7 @@ export function Preview(props: PanelContentProps) {
         window.addEventListener("message", receiveReady);
         sendPreview();
         return () => window.removeEventListener("message", receiveReady);
-    }, [props.apiDemo, props.selected]);
+    }, [props.apiDemo, props.boxDemo, props.selected, showIframe]);
 
     /*
     |------------------------------------------
@@ -36,7 +45,8 @@ export function Preview(props: PanelContentProps) {
     |------------------------------------------
     */
     return (
-        <section aria-labelledby="preview-title"
+        <section
+            aria-labelledby="preview-title"
             className={uiSections.section}>
             <Title
                 aside="Canvas do componente"
@@ -53,10 +63,11 @@ export function Preview(props: PanelContentProps) {
                     <div className={uiPreview.canvas}>
                         <ComponentPreview
                             apiDemo={props.apiDemo}
+                            boxDemo={props.boxDemo}
                             selected={props.selected}/>
                     </div>
                 </div>
-                <div className={uiPreview.shell}>
+                {showIframe && <div className={uiPreview.frameShell}>
                     <div className={uiPreview.toolbar}>
                         <span className="flex items-center gap-2"><span className={uiPreview.liveDot}/> PRÉVIA NO IFRAME</span>
                         <span>Documento isolado</span>
@@ -67,7 +78,7 @@ export function Preview(props: PanelContentProps) {
                         src="?preview=iframe"
                         title="Prévia do componente dentro de um iframe"
                         onLoad={sendPreview}/>
-                </div>
+                </div>}
             </div>
         </section>
     );

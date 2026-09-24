@@ -31,6 +31,7 @@ export function IframePreview() {
         <div className={uiPreview.frameCanvas}>
             {preview && <ComponentPreview
                 apiDemo={preview.apiDemo}
+                boxDemo={preview.boxDemo}
                 selected={preview.selected}/>}
         </div>
     );

@@ -1,5 +1,5 @@
 import { uiHeader } from "./style/ui-header";
-import { componentNames } from "../../catalog/components";
+import { componentNames } from "../../components.ts";
 
 /**
  * Módulo (Sandbox) - Cabeçalho do catálogo

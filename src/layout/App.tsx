@@ -5,8 +5,10 @@ import { Sidebar } from "./panel/Sidebar";
 import { Content } from "./panel/Content";
 import { Controls } from "./panel/Controls";
 import { initialApiDemo } from "../components/api/state";
-import type { ComponentName } from "../catalog/components";
+import { initialBoxDemo } from "../components/box/state";
+import type { ComponentName } from "../components.ts";
 import type { ApiDemoState } from "../components/api/state";
+import type { BoxDemoState } from "../components/box/state";
 
 /**
  * Módulo (Sandbox) - Catálogo de componentes
@@ -14,6 +16,7 @@ import type { ApiDemoState } from "../components/api/state";
 export function App() {
     const [selected, setSelected] = useState<ComponentName>("API");
     const [apiDemo, setApiDemo] = useState<ApiDemoState>(initialApiDemo);
+    const [boxDemo, setBoxDemo] = useState<BoxDemoState>(initialBoxDemo);
     /*
     |------------------------------------------
     | render() - Renderização do componente
@@ -30,11 +33,14 @@ export function App() {
                     <div className={uiApp.body}>
                         <Content
                             apiDemo={apiDemo}
+                            boxDemo={boxDemo}
                             selected={selected}/>
                         <Controls
                             apiDemo={apiDemo}
+                            boxDemo={boxDemo}
                             selected={selected}
-                            onApiDemoChange={setApiDemo}/>
+                            onApiDemoChange={setApiDemo}
+                            onBoxDemoChange={setBoxDemo}/>
                     </div>
                 </div>
             </div>

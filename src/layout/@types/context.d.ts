@@ -1,4 +1,4 @@
-import type { ComponentName } from "../../catalog/components.ts";
+import type { ComponentName } from "../../components.ts";
 
 export type ContextSelectionProps = {
     selected: ComponentName;
