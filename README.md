@@ -5,6 +5,7 @@ Aplicação Vite independente para construir e inspecionar componentes da biblio
 Para alterações feitas por IA, siga o [padrão de escrita](AGENTS.md).
 
 O catálogo inclui uma demonstração interativa dos helpers de `@orangesix/react/api`: `InputLabel`, `InputProps` e `InputFeedback`.
+Cada componente é exibido em duas prévias: uma na página e outra em um iframe com documento e raiz React próprios. Os controles do playground atualizam as duas prévias; cada campo mantém seu estado local de forma independente.
 
 O código do layout do ambiente fica em `src/layout`: `App.tsx` monta a página e guarda o componente selecionado, `panel/` contém os painéis de cabeçalho, navegação, conteúdo e controles, e `context/` contém prévia e props. Cada uma dessas duas pastas mantém seus estilos em `style/`; `src/layout/styles/` guarda o estilo da estrutura principal. As demonstrações da API ficam em `src/components/api`, com seus estilos e estado. Os controles de texto, seleção e checkbox reutilizáveis ficam em `src/components/form`; cada componente de formulário combina apenas os controles de que precisa e mantém seu próprio estado. As tipagens de props do layout ficam em `src/layout/@types/context.d.ts` e `src/layout/@types/panel.d.ts`. As imagens e outros arquivos estáticos ficam em `assets/`, fora de `src`. O alias `@assets/*` permite importá-los no código; o favicon é referenciado diretamente no `index.html`. O catálogo de componentes fica em `src/catalog`, e `src/main.tsx` inicializa a aplicação.
 
