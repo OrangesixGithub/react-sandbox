@@ -17,7 +17,7 @@ export function ButtonPreview(props: ButtonPreviewProps) {
     |------------------------------------------
     */
     return (
-        <div className="flex flex-col items-start gap-5 text-copy">
+        <div className="flex flex-col items-start gap-5 text-slate-700 dark:text-copy">
             <div className="flex flex-wrap items-center gap-4">
                 <Button
                     color={props.buttonDemo.color}
@@ -40,7 +40,7 @@ export function ButtonPreview(props: ButtonPreviewProps) {
                     icon="gear"
                     label="Customizado"/>
             </div>
-            <p className="text-xs text-muted">Cliques no botão principal: {clicks}</p>
+            <p className="text-xs text-slate-500 dark:text-muted">Cliques no botão principal: {clicks}</p>
         </div>
     );
 }

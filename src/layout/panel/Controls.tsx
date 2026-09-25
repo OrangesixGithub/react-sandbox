@@ -3,6 +3,7 @@ import { ApiControls } from "../../components/api/Controls";
 import { BoxControls } from "../../components/box/Controls";
 import { uiControlField, uiControls } from "./style/ui-controls";
 import { ButtonControls } from "../../components/button/Controls";
+import { InputControls } from "../../components/input/Controls";
 
 /**
  * Módulo (Sandbox) - Controles do playground
@@ -37,6 +38,10 @@ export function Controls(props: PanelControlsProps) {
                     <ButtonControls
                         buttonDemo={props.buttonDemo}
                         onButtonDemoChange={props.onButtonDemoChange}/>
+                ) : props.selected === "Input" ? (
+                    <InputControls
+                        inputDemo={props.inputDemo}
+                        onInputDemoChange={props.onInputDemoChange}/>
                 ) : <div className={uiControls.skeletonGrid}>
                     {[0, 1, 2, 3].map((index) => (
                         <div className="grid gap-2"
@@ -47,7 +52,7 @@ export function Controls(props: PanelControlsProps) {
                         </div>
                     ))}
                 </div>}
-                {props.selected !== "API" && props.selected !== "Box" && props.selected !== "Button" && <div className={uiControls.note}>
+                {props.selected !== "API" && props.selected !== "Box" && props.selected !== "Button" && props.selected !== "Input" && <div className={uiControls.note}>
                     <i aria-hidden="true"
                         className={uiControls.noteIcon}/>
                     <p className="text-[11px] leading-normal text-muted">

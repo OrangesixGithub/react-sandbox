@@ -1,16 +1,17 @@
 import { Title } from "./Title";
-import { useEffect, useRef } from "react";
 import { uiPreview } from "./style/ui-preview";
 import { uiSections } from "./style/ui-sections";
 import { components } from "../../components.ts";
+import { useEffect, useRef, useState } from "react";
 import { ComponentPreview } from "./ComponentPreview";
-import type { PanelContentProps } from "../@types/panel";
+import type { PanelContentProps, PreviewTheme } from "../@types/panel";
 
 /**
  * Módulo (Sandbox) - Prévia do componente
  */
 export function Preview(props: PanelContentProps) {
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const [theme, setTheme] = useState<PreviewTheme>("dark");
     const showIframe = components[props.selected].iframe;
 
     function sendPreview() {
@@ -19,7 +20,7 @@ export function Preview(props: PanelContentProps) {
         }
         iframeRef.current?.contentWindow?.postMessage({
             type: "sandbox-preview",
-            payload: { apiDemo: props.apiDemo, boxDemo: props.boxDemo, buttonDemo: props.buttonDemo, selected: props.selected },
+            payload: { apiDemo: props.apiDemo, boxDemo: props.boxDemo, buttonDemo: props.buttonDemo, inputDemo: props.inputDemo, selected: props.selected, theme },
         }, window.location.origin);
     }
 
@@ -37,7 +38,15 @@ export function Preview(props: PanelContentProps) {
         window.addEventListener("message", receiveReady);
         sendPreview();
         return () => window.removeEventListener("message", receiveReady);
-    }, [props.apiDemo, props.boxDemo, props.buttonDemo, props.selected, showIframe]);
+    }, [
+        props.apiDemo,
+        props.boxDemo,
+        props.buttonDemo,
+        props.inputDemo,
+        props.selected,
+        showIframe,
+        theme
+    ]);
 
     /*
     |------------------------------------------
@@ -57,14 +66,28 @@ export function Preview(props: PanelContentProps) {
             <div className={uiPreview.grid}>
                 <div className={uiPreview.shell}>
                     <div className={uiPreview.toolbar}>
-                        <span className="flex items-center gap-2"><span className={uiPreview.liveDot}/> PRÉVIA NORMAL</span>
+                        <div className="flex items-center gap-3">
+                            <span className="flex items-center gap-2"><span className={uiPreview.liveDot}/> PRÉVIA NORMAL</span>
+                            <button
+                                aria-label={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+                                aria-pressed={theme === "dark"}
+                                className="rounded-md p-1 text-muted hover:bg-white/10 hover:text-copy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                                title={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+                                type="button"
+                                onClick={() => setTheme(current => current === "dark" ? "light" : "dark")}>
+                                <i
+                                    aria-hidden="true"
+                                    className={theme === "dark" ? "pi pi-sun" : "pi pi-moon"}/>
+                            </button>
+                        </div>
                         <span>React</span>
                     </div>
-                    <div className={uiPreview.canvas}>
+                    <div className={`${uiPreview.canvas} ${theme === "dark" ? "dark bg-preview text-copy" : "bg-white text-slate-900"}`}>
                         <ComponentPreview
                             apiDemo={props.apiDemo}
                             boxDemo={props.boxDemo}
                             buttonDemo={props.buttonDemo}
+                            inputDemo={props.inputDemo}
                             selected={props.selected}/>
                     </div>
                 </div>

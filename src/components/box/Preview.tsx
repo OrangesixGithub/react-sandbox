@@ -15,8 +15,8 @@ export function BoxPreview(props: BoxPreviewProps) {
     |------------------------------------------
     */
     return (
-        <div className="w-full rounded-xl text-copy">
-            <p className="mb-1 text-xs text-muted">Área de referência: 100% da largura</p>
+        <div className="w-full rounded-xl text-slate-700 dark:text-copy">
+            <p className="mb-1 text-xs text-slate-500 dark:text-muted">Área de referência: 100% da largura</p>
             <Box
                 align={props.boxDemo.align}
                 className="gap-2 rounded-lg border border-accent bg-accent/10 p-3"
@@ -28,7 +28,7 @@ export function BoxPreview(props: BoxPreviewProps) {
                         key={item}>{item}</span>
                 ))}
             </Box>
-            <p className="mb-1 text-xs text-muted mt-3">Área de referência: 50% da largura</p>
+            <p className="mb-1 text-xs text-slate-500 mt-3 dark:text-muted">Área de referência: 50% da largura</p>
             <Box
                 align={props.boxDemo.align}
                 className="gap-2 rounded-lg border border-accent bg-accent/10 p-3"
@@ -41,7 +41,7 @@ export function BoxPreview(props: BoxPreviewProps) {
                         key={item}>{item}</span>
                 ))}
             </Box>
-            <p className="mb-1 text-xs text-muted mt-3">Área de referência:
+            <p className="mb-1 text-xs text-slate-500 mt-3 dark:text-muted">Área de referência:
                 <span className="text-accent ms-1.5">Personalizado w-[37%]!</span></p>
             <Box
                 align={props.boxDemo.align}
@@ -54,7 +54,7 @@ export function BoxPreview(props: BoxPreviewProps) {
                         key={item}>{item}</span>
                 ))}
             </Box>
-            <p className="mb-1 mt-3 text-xs text-muted">Responsivo: 100% → 50% em md → 25% em lg · elemento {props.boxDemo.element}</p>
+            <p className="mb-1 mt-3 text-xs text-slate-500 dark:text-muted">Responsivo: 100% → 50% em md → 25% em lg · elemento {props.boxDemo.element}</p>
             <Box
                 align={props.boxDemo.align}
                 aria-label="Exemplo de Box responsivo"

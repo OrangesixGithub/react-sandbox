@@ -16,6 +16,9 @@ const libraryRoot = path.resolve(sandboxRoot, "../react");
 export default defineConfig(({ mode }) => {
     const isPackage = mode === "package";
     const libraryDir = path.resolve(libraryRoot, isPackage ? "dist" : "src");
+    const inputDir = isPackage && !existsSync(path.resolve(libraryDir, "input/package.json"))
+        ? path.resolve(libraryRoot, "src/input")
+        : path.resolve(libraryDir, "input");
     const packageFile = path.resolve(isPackage ? libraryDir : libraryRoot, "package.json");
     const styleFile = isPackage
         ? path.resolve(libraryDir, "style.css")
@@ -72,6 +75,10 @@ export default defineConfig(({ mode }) => {
                 {
                     find: /^@orangesix\/react\/style\.css$/,
                     replacement: styleFile,
+                },
+                {
+                    find: /^@orangesix\/react\/input$/,
+                    replacement: inputDir,
                 },
                 {
                     find: /^@orangesix\/react\/(.+)$/,

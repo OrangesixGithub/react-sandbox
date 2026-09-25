@@ -2,6 +2,7 @@ import type { PanelContentProps } from "../@types/panel";
 import { ApiPreview } from "../../components/api/Preview";
 import { BoxPreview } from "../../components/box/Preview";
 import { ButtonPreview } from "../../components/button/Preview";
+import { InputPreview } from "../../components/input/Preview";
 
 /**
  * Módulo (Sandbox) - Conteúdo compartilhado das prévias
@@ -20,6 +21,8 @@ export function ComponentPreview(props: PanelContentProps) {
                 && <BoxPreview boxDemo={props.boxDemo}/>}
             {props.selected === "Button"
                 && <ButtonPreview buttonDemo={props.buttonDemo}/>}
+            {props.selected === "Input"
+                && <InputPreview inputDemo={props.inputDemo}/>}
         </>
     );
 }
