@@ -4,6 +4,7 @@ import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
 import { ApiProps } from "../../components/api/Props";
 import { BoxProps } from "../../components/box/Props";
+import { ButtonProps } from "../../components/button/Props";
 import type { ContextSelectionProps } from "../@types/context";
 
 /**
@@ -18,6 +19,9 @@ export function Props(props: ContextSelectionProps) {
             break;
         case "Box":
             component = <BoxProps/>;
+            break;
+        case "Button":
+            component = <ButtonProps/>;
             break;
         default:
             component = (

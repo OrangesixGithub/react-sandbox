@@ -50,6 +50,9 @@ export default defineConfig(({ mode }) => {
             dedupe: [
                 "react",
                 "react-dom",
+                "primereact",
+                "@primereact/core",
+                "@primereact/headless",
             ],
             extensions: [
                 ".mjs",

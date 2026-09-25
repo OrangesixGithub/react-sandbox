@@ -32,6 +32,7 @@ export function IframePreview() {
             {preview && <ComponentPreview
                 apiDemo={preview.apiDemo}
                 boxDemo={preview.boxDemo}
+                buttonDemo={preview.buttonDemo}
                 selected={preview.selected}/>}
         </div>
     );

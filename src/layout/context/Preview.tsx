@@ -19,7 +19,7 @@ export function Preview(props: PanelContentProps) {
         }
         iframeRef.current?.contentWindow?.postMessage({
             type: "sandbox-preview",
-            payload: { apiDemo: props.apiDemo, boxDemo: props.boxDemo, selected: props.selected },
+            payload: { apiDemo: props.apiDemo, boxDemo: props.boxDemo, buttonDemo: props.buttonDemo, selected: props.selected },
         }, window.location.origin);
     }
 
@@ -37,7 +37,7 @@ export function Preview(props: PanelContentProps) {
         window.addEventListener("message", receiveReady);
         sendPreview();
         return () => window.removeEventListener("message", receiveReady);
-    }, [props.apiDemo, props.boxDemo, props.selected, showIframe]);
+    }, [props.apiDemo, props.boxDemo, props.buttonDemo, props.selected, showIframe]);
 
     /*
     |------------------------------------------
@@ -64,6 +64,7 @@ export function Preview(props: PanelContentProps) {
                         <ComponentPreview
                             apiDemo={props.apiDemo}
                             boxDemo={props.boxDemo}
+                            buttonDemo={props.buttonDemo}
                             selected={props.selected}/>
                     </div>
                 </div>

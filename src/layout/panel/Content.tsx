@@ -33,6 +33,7 @@ export function Content(props: PanelContentProps) {
             <Preview
                 apiDemo={props.apiDemo}
                 boxDemo={props.boxDemo}
+                buttonDemo={props.buttonDemo}
                 selected={props.selected}/>
             <Props selected={props.selected}/>
         </main>
