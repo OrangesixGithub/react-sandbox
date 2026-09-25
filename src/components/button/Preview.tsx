@@ -11,7 +11,6 @@ type ButtonPreviewProps = {
  */
 export function ButtonPreview(props: ButtonPreviewProps) {
     const [clicks, setClicks] = useState(0);
-
     /*
     |------------------------------------------
     | render() - Renderização do componente
@@ -31,10 +30,15 @@ export function ButtonPreview(props: ButtonPreviewProps) {
                     size={props.buttonDemo.size === "normal" ? undefined : props.buttonDemo.size}
                     onClick={() => setClicks(count => count + 1)}/>
                 <Button
+                    rounded
                     badge="3"
-                    color="success"
-                    icon="bell"
-                    label="Com badge"/>
+                    color="primary"
+                    icon="save"
+                    label="Gravar"/>
+                <Button
+                    className="text-indigo-600 bg-indigo-300 hover:bg-indigo-200"
+                    icon="gear"
+                    label="Customizado"/>
             </div>
             <p className="text-xs text-muted">Cliques no botão principal: {clicks}</p>
         </div>
