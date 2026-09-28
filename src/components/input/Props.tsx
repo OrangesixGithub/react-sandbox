@@ -1,9 +1,9 @@
-import { TypeBadges } from "../TypeBadges";
+import { TypeBadges } from "../../core/TypeBadges";
 import { uiApiProps } from "../api/style/ui-props";
 
 const inputProps = [
     { name: "mode / control", type: "Controlled | HookForm", description: "Modo de controle do valor e objeto do React Hook Form." },
-    { name: "type", type: "text | email | number | password", description: "Tipo de campo. CPF e CNPJ usam mask." },
+    { name: "type", type: "text | email | number | password | date | time", description: "Tipo de campo. CPF e CNPJ usam mask com type text." },
     { name: "sizes", type: "small | large", description: "Tamanho visual do campo; sem valor usa o tamanho normal." },
     { name: "error", type: "string", description: "Mensagem de erro exibida abaixo do campo e estilo inválido." },
     { name: "value / onChange / onBlur", type: "valor / função", description: "Valor e callbacks do modo Controlled." },

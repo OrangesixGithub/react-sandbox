@@ -1,13 +1,12 @@
 import type { InputDemoState } from "./state";
-import { uiFormControls } from "../form/style/ui-controls";
-import { CheckboxControl, SelectControl, TextControl } from "../form/Controls";
+import { uiFormControls } from "../../core/form/style/ui-controls";
+import { CheckboxControl, SelectControl, TextControl } from "../../core/form/Controls";
 
 type InputControlsProps = {
     inputDemo: InputDemoState;
     onInputDemoChange: (state: InputDemoState) => void;
 };
 
-const typeOptions = ["text", "email", "number", "password", "cpf"] as const;
 const modeOptions = ["Controlled", "HookForm"] as const;
 const sizeOptions = [
     { label: "Pequeno", value: "small" },
@@ -26,15 +25,6 @@ export function InputControls(props: InputControlsProps) {
     */
     return (
         <div className={uiFormControls.fields}>
-            <TextControl
-                label="Rótulo"
-                value={props.inputDemo.label}
-                onChange={label => props.onInputDemoChange({ ...props.inputDemo, label })}/>
-            <SelectControl
-                label="Tipo"
-                options={typeOptions.map(value => ({ label: value, value }))}
-                value={props.inputDemo.type}
-                onChange={type => props.onInputDemoChange({ ...props.inputDemo, type })}/>
             <SelectControl
                 label="Modo"
                 options={modeOptions.map(value => ({ label: value, value }))}

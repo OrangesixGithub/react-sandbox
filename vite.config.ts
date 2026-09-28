@@ -54,8 +54,6 @@ export default defineConfig(({ mode }) => {
                 "react",
                 "react-dom",
                 "primereact",
-                "@primereact/core",
-                "@primereact/headless",
             ],
             extensions: [
                 ".mjs",
@@ -71,6 +69,11 @@ export default defineConfig(({ mode }) => {
                 {
                     find: /^@assets\/(.+)$/,
                     replacement: `${path.resolve(sandboxRoot, "assets")}/$1`,
+                },
+                {
+                    // Caminho relativo no CSS permite a resolução pelo serviço Tailwind do editor.
+                    find: "../../../react/src/style/style.css",
+                    replacement: styleFile,
                 },
                 {
                     find: /^@orangesix\/react\/style\.css$/,

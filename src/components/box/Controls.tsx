@@ -1,6 +1,6 @@
 import type { BoxDemoState } from "./state";
-import { SelectControl } from "../form/Controls";
-import { uiFormControls } from "../form/style/ui-controls";
+import { SelectControl } from "../../core/form/Controls";
+import { uiFormControls } from "../../core/form/style/ui-controls";
 
 type BoxControlsProps = {
     boxDemo: BoxDemoState;

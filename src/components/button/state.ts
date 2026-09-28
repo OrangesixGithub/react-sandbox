@@ -13,7 +13,7 @@ export type ButtonDemoState = {
 
 export const initialButtonDemo: ButtonDemoState = {
     label: "Salvar alterações",
-    icon: "check",
+    icon: "save",
     color: "primary",
     size: "normal",
     iconPos: "left",

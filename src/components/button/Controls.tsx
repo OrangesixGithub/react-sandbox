@@ -1,6 +1,6 @@
 import type { ButtonDemoState } from "./state";
-import { uiFormControls } from "../form/style/ui-controls";
-import { CheckboxControl, SelectControl, TextControl } from "../form/Controls";
+import { uiFormControls } from "../../core/form/style/ui-controls";
+import { CheckboxControl, SelectControl, TextControl } from "../../core/form/Controls";
 
 type ButtonControlsProps = {
     buttonDemo: ButtonDemoState;

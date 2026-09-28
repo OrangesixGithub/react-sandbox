@@ -1,5 +1,5 @@
-import { TypeBadges } from "../TypeBadges";
 import { uiApiProps } from "./style/ui-props";
+import { TypeBadges } from "../../core/TypeBadges";
 
 const apiProps = [
     { name: "label", type: "string", description: "Texto do InputLabel; sem valor, o rótulo não é exibido." },

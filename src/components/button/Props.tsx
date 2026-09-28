@@ -1,4 +1,4 @@
-import { TypeBadges } from "../TypeBadges";
+import { TypeBadges } from "../../core/TypeBadges";
 import { uiApiProps } from "../api/style/ui-props";
 
 const buttonProps = [

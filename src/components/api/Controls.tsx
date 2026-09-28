@@ -1,7 +1,7 @@
 import type { ApiDemoState } from "./state";
-import { formModeOptions } from "../form/options";
-import { uiFormControls } from "../form/style/ui-controls";
-import { CheckboxControl, SelectControl, TextControl } from "../form/Controls";
+import { formModeOptions } from "../../core/form/options";
+import { uiFormControls } from "../../core/form/style/ui-controls";
+import { CheckboxControl, SelectControl, TextControl } from "../../core/form/Controls";
 
 type ApiControlsProps = {
     apiDemo: ApiDemoState;

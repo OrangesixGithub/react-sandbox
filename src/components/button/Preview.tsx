@@ -34,11 +34,13 @@ export function ButtonPreview(props: ButtonPreviewProps) {
                     badge="3"
                     color="primary"
                     icon="save"
-                    label="Gravar"/>
+                    label="Gravar"
+                    size={props.buttonDemo.size === "normal" ? undefined : props.buttonDemo.size}/>
                 <Button
                     className="text-indigo-600 bg-indigo-300 hover:bg-indigo-200"
                     icon="gear"
-                    label="Customizado"/>
+                    label="Customizado"
+                    size={props.buttonDemo.size === "normal" ? undefined : props.buttonDemo.size}/>
             </div>
             <p className="text-xs text-slate-500 dark:text-muted">Cliques no botão principal: {clicks}</p>
         </div>

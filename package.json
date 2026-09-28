@@ -11,10 +11,9 @@
     "lint:fix": "eslint src vite.config.ts --fix"
   },
   "dependencies": {
-    "@primereact/core": "^11.1.0",
     "bootstrap-icons": "^1.13.1",
     "clsx": "^2.1.1",
-    "primereact": "^11.1.0",
+    "primereact": "10.9.9",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-hook-form": "^7.88.0",
