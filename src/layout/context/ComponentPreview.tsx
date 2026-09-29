@@ -1,8 +1,7 @@
 import type { PanelContentProps } from "../@types/panel";
-import { ApiPreview } from "../../components/api/Preview";
-import { BoxPreview } from "../../components/box/Preview";
-import { ButtonPreview } from "../../components/button/Preview";
-import { InputPreview } from "../../components/input/Preview";
+import { BoxStage } from "../../components/box/Stage";
+import { InputStage } from "../../components/input/Stage";
+import { ButtonStage } from "../../components/button/Stage";
 
 /**
  * Módulo (Sandbox) - Conteúdo compartilhado das prévias
@@ -15,14 +14,12 @@ export function ComponentPreview(props: PanelContentProps) {
     */
     return (
         <>
-            {props.selected === "API"
-                && <ApiPreview apiDemo={props.apiDemo}/>}
             {props.selected === "Box"
-                && <BoxPreview boxDemo={props.boxDemo}/>}
+                && <BoxStage/>}
             {props.selected === "Button"
-                && <ButtonPreview buttonDemo={props.buttonDemo}/>}
+                && <ButtonStage/>}
             {props.selected === "Input"
-                && <InputPreview inputDemo={props.inputDemo}/>}
+                && <InputStage/>}
         </>
     );
 }

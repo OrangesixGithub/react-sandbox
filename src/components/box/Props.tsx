@@ -1,5 +1,5 @@
 import { TypeBadges } from "../../core/TypeBadges";
-import { uiApiProps } from "../api/style/ui-props";
+import { uiApiProps } from "../../core/style/ui-props";
 
 const boxProps = [
     { name: "size", type: "string | objeto", description: "Largura percentual fixa ou por breakpoint: { base: '100', md: '50', lg: '25' }. Padrão: 100%." },

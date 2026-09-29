@@ -5,5 +5,5 @@ export const uiContent = {
     eyebrow: "text-[11px] font-bold uppercase tracking-widest text-accent-strong",
     title: "mt-2 font-display text-[40px] leading-tight font-extrabold tracking-tight text-white",
     description: "mt-1 text-[13px] leading-relaxed text-muted",
-    importPath: "inline-block shrink-0 rounded-lg border border-border bg-panel px-3 py-2 font-mono text-[12px] text-muted",
+    importPath: "inline-block shrink-0 rounded-lg border border-shell-border bg-panel px-3 py-2 font-mono text-[12px] text-muted",
 } as const;

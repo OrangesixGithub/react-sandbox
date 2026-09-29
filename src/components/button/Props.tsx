@@ -1,5 +1,5 @@
 import { TypeBadges } from "../../core/TypeBadges";
-import { uiApiProps } from "../api/style/ui-props";
+import { uiApiProps } from "../../core/style/ui-props";
 
 const buttonProps = [
     { name: "label", type: "string", description: "Texto exibido no botão." },

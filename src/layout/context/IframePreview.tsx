@@ -29,12 +29,7 @@ export function IframePreview() {
     */
     return (
         <div className={`${uiPreview.frameCanvas} ${preview?.theme === "light" ? "bg-white text-slate-900" : "dark bg-preview text-copy"}`}>
-            {preview && <ComponentPreview
-                apiDemo={preview.apiDemo}
-                boxDemo={preview.boxDemo}
-                buttonDemo={preview.buttonDemo}
-                inputDemo={preview.inputDemo}
-                selected={preview.selected}/>}
+            {preview && <ComponentPreview selected={preview.selected}/>}
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import { TypeBadges } from "../../core/TypeBadges";
-import { uiApiProps } from "../api/style/ui-props";
+import { uiApiProps } from "../../core/style/ui-props";
 
 const inputProps = [
     { name: "mode / control", type: "Controlled | HookForm", description: "Modo de controle do valor e objeto do React Hook Form." },

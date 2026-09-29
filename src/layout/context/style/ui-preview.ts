@@ -1,8 +1,8 @@
 export const uiPreview = {
     grid: "grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-4",
-    shell: "overflow-hidden rounded-2xl border border-border bg-panel",
-    frameShell: "flex min-h-[350px] flex-col overflow-hidden rounded-2xl border border-border bg-panel",
-    toolbar: "flex min-h-11 items-center justify-between border-b border-border px-5 text-[10px] font-semibold text-muted",
+    shell: "overflow-hidden rounded-2xl border border-shell-border bg-panel",
+    frameShell: "flex min-h-[350px] flex-col overflow-hidden rounded-2xl border border-shell-border bg-panel",
+    toolbar: "flex min-h-11 items-center justify-between border-b border-shell-border px-5 text-[10px] font-semibold text-muted",
     liveDot: "inline-block h-1.5 w-1.5 rounded-full bg-accent",
     canvas: "grid place-items-center p-4 tablet:p-6",
     frameCanvas: "grid min-h-screen place-items-center p-4 tablet:p-6",

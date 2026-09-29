@@ -2,10 +2,9 @@ import { Title } from "./Title";
 import type { ReactNode } from "react";
 import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
-import { ApiProps } from "../../components/api/Props";
 import { BoxProps } from "../../components/box/Props";
-import { ButtonProps } from "../../components/button/Props";
 import { InputProps } from "../../components/input/Props";
+import { ButtonProps } from "../../components/button/Props";
 import type { ContextSelectionProps } from "../@types/context";
 
 /**
@@ -15,9 +14,6 @@ export function Props(props: ContextSelectionProps) {
     let component: ReactNode;
 
     switch (props.selected) {
-        case "API":
-            component = <ApiProps/>;
-            break;
         case "Box":
             component = <BoxProps/>;
             break;

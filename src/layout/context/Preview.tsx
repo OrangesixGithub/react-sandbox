@@ -20,7 +20,7 @@ export function Preview(props: PanelContentProps) {
         }
         iframeRef.current?.contentWindow?.postMessage({
             type: "sandbox-preview",
-            payload: { apiDemo: props.apiDemo, boxDemo: props.boxDemo, buttonDemo: props.buttonDemo, inputDemo: props.inputDemo, selected: props.selected, theme },
+            payload: { selected: props.selected, theme },
         }, window.location.origin);
     }
 
@@ -39,10 +39,6 @@ export function Preview(props: PanelContentProps) {
         sendPreview();
         return () => window.removeEventListener("message", receiveReady);
     }, [
-        props.apiDemo,
-        props.boxDemo,
-        props.buttonDemo,
-        props.inputDemo,
         props.selected,
         showIframe,
         theme
@@ -83,12 +79,7 @@ export function Preview(props: PanelContentProps) {
                         <span>React</span>
                     </div>
                     <div className={`${uiPreview.canvas} ${theme === "dark" ? "dark bg-preview text-copy" : "bg-white text-slate-900"}`}>
-                        <ComponentPreview
-                            apiDemo={props.apiDemo}
-                            boxDemo={props.boxDemo}
-                            buttonDemo={props.buttonDemo}
-                            inputDemo={props.inputDemo}
-                            selected={props.selected}/>
+                        <ComponentPreview selected={props.selected}/>
                     </div>
                 </div>
                 {showIframe && <div className={uiPreview.frameShell}>

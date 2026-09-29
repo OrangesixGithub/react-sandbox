@@ -26,16 +26,11 @@ export function Content(props: PanelContentProps) {
                 <div>
                     <span className={uiContent.eyebrow}>COMPONENTE SELECIONADO</span>
                     <h1 className={uiContent.title}>{props.selected}</h1>
-                    <p className={uiContent.description}>Visualize o componente, ajuste as propriedades e consulte a API.</p>
+                    <p className={uiContent.description}>Teste o componente na prévia e consulte suas propriedades.</p>
                 </div>
                 <code className={uiContent.importPath}>@orangesix/react/{componentId(props.selected)}</code>
             </div>
-            <Preview
-                apiDemo={props.apiDemo}
-                boxDemo={props.boxDemo}
-                buttonDemo={props.buttonDemo}
-                inputDemo={props.inputDemo}
-                selected={props.selected}/>
+            <Preview selected={props.selected}/>
             <Props selected={props.selected}/>
         </main>
     );
