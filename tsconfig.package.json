@@ -3,6 +3,7 @@
   "compilerOptions": {
     "paths": {
       "@assets/*": ["./assets/*"],
+      "@orangesix/react/switch": ["../react/dist/switch", "../react/src/switch"],
       "@orangesix/react/radio": ["../react/dist/radio", "../react/src/radio"],
       "@orangesix/react/input": ["../react/dist/input", "../react/src/input"],
       "@orangesix/react/*": ["../react/dist/*"]

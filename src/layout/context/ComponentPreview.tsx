@@ -2,6 +2,7 @@ import { BoxStage } from "../../components/box/Stage";
 import { RadioStage } from "../../components/radio/Stage";
 import type { PanelContentProps } from "../@types/panel";
 import { InputStage } from "../../components/input/Stage";
+import { SwitchStage } from "../../components/switch/Stage";
 import { ButtonStage } from "../../components/button/Stage";
 import { SelectStage } from "../../components/select/Stage";
 
@@ -22,6 +23,7 @@ export function ComponentPreview(props: PanelContentProps) {
                 && <ButtonStage/>}
             {props.selected === "Input"
                 && <InputStage/>}
+            {props.selected === "Switch" && <SwitchStage/>}
             {props.selected === "Radio" && <RadioStage/>}
             {props.selected === "Select"
                 && <SelectStage/>}

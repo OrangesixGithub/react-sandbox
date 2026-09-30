@@ -25,6 +25,9 @@ export default defineConfig(({ mode }) => {
     const radioDir = isPackage && !existsSync(path.resolve(libraryDir, "radio/package.json"))
         ? path.resolve(libraryRoot, "src/radio")
         : path.resolve(libraryDir, "radio");
+    const switchDir = isPackage && !existsSync(path.resolve(libraryDir, "switch/package.json"))
+        ? path.resolve(libraryRoot, "src/switch")
+        : path.resolve(libraryDir, "switch");
     const packageFile = path.resolve(isPackage ? libraryDir : libraryRoot, "package.json");
     const styleFile = isPackage
         ? path.resolve(libraryDir, "style.css")
@@ -96,6 +99,10 @@ export default defineConfig(({ mode }) => {
                 {
                     find: /^@orangesix\/react\/radio$/,
                     replacement: radioDir,
+                },
+                {
+                    find: /^@orangesix\/react\/switch$/,
+                    replacement: switchDir,
                 },
                 {
                     find: /^@orangesix\/react\/(.+)$/,

@@ -6,6 +6,7 @@ import { boxProps } from "../../components/box/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
+import { switchProps } from "../../components/switch/Props";
 import { buttonProps } from "../../components/button/Props";
 import { selectProps } from "../../components/select/Props";
 import type { ContextSelectionProps } from "../@types/context";
@@ -16,6 +17,7 @@ const componentProps = {
     Input: inputProps,
     Select: selectProps,
     Radio: radioProps,
+    Switch: switchProps,
 };
 
 /**
