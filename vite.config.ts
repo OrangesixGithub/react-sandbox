@@ -28,6 +28,12 @@ export default defineConfig(({ mode }) => {
     const switchDir = isPackage && !existsSync(path.resolve(libraryDir, "switch/package.json"))
         ? path.resolve(libraryRoot, "src/switch")
         : path.resolve(libraryDir, "switch");
+    const checkboxDir = isPackage && !existsSync(path.resolve(libraryDir, "checkbox/package.json"))
+        ? path.resolve(libraryRoot, "src/checkbox")
+        : path.resolve(libraryDir, "checkbox");
+    const multiselectDir = isPackage && !existsSync(path.resolve(libraryDir, "multiselect/package.json"))
+        ? path.resolve(libraryRoot, "src/multiselect")
+        : path.resolve(libraryDir, "multiselect");
     const packageFile = path.resolve(isPackage ? libraryDir : libraryRoot, "package.json");
     const styleFile = isPackage
         ? path.resolve(libraryDir, "style.css")
@@ -103,6 +109,14 @@ export default defineConfig(({ mode }) => {
                 {
                     find: /^@orangesix\/react\/switch$/,
                     replacement: switchDir,
+                },
+                {
+                    find: /^@orangesix\/react\/checkbox$/,
+                    replacement: checkboxDir,
+                },
+                {
+                    find: /^@orangesix\/react\/multiselect$/,
+                    replacement: multiselectDir,
                 },
                 {
                     find: /^@orangesix\/react\/(.+)$/,

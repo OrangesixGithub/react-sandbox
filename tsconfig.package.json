@@ -3,6 +3,8 @@
   "compilerOptions": {
     "paths": {
       "@assets/*": ["./assets/*"],
+      "@orangesix/react/multiselect": ["../react/dist/multiselect", "../react/src/multiselect"],
+      "@orangesix/react/checkbox": ["../react/dist/checkbox", "../react/src/checkbox"],
       "@orangesix/react/switch": ["../react/dist/switch", "../react/src/switch"],
       "@orangesix/react/radio": ["../react/dist/radio", "../react/src/radio"],
       "@orangesix/react/input": ["../react/dist/input", "../react/src/input"],

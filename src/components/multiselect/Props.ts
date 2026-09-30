@@ -1,0 +1,16 @@
+export const multiselectProps = [
+    { name: "mode / control", type: "Controlled | HookForm", description: "Modo de controle e objeto do React Hook Form." },
+    { name: "options", type: "SelectItem[]", description: "Opções com label, value e disabled opcional." },
+    { name: "optionLabel / optionValue", type: "string", description: "Propriedades usadas como texto e valor; padrão label e value." },
+    { name: "value / onChange / onBlur", type: "array / função", description: "Valores selecionados; callbacks recebem a lista de valores." },
+    { name: "display", type: "chip | comma", description: "Exibe chips ou textos separados por vírgula; padrão chip." },
+    { name: "filter", type: "MultiSelectFilterProps", description: "Busca com placeholder, autoFocus, modeFilter, delay, reset e onFilter." },
+    { name: "template", type: "MultiSelectTemplateProps", description: "Personaliza item, header e footer." },
+    { name: "selectionLimit / scrollHeight", type: "number / string", description: "Máximo de seleções e altura da lista." },
+    { name: "appendTo", type: "self | HTMLElement | função | null", description: "Destino do painel; sem valor herda o tema junto ao campo." },
+    { name: "sizes / size", type: "small | large / percentual", description: "Tamanho visual e largura responsiva." },
+    { name: "required / disabled / readonly / loading", type: "boolean", description: "Obrigatoriedade, bloqueio de alterações e carregamento." },
+    { name: "readonlyType / readonlyClassName", type: "label | field / string", description: "No Controlled, permite exibir os nomes selecionados como texto." },
+    { name: "error", type: "string", description: "Mensagem de erro, incluindo validação pelo HookForm." },
+    { name: "onShow / onHide", type: "função", description: "Callbacks ao abrir e fechar o painel." },
+] as const;

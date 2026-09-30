@@ -1,28 +1,44 @@
 import { useState } from "react";
-import { Box } from "@orangesix/react/box";
+import { useForm } from "react-hook-form";
 import { Input } from "@orangesix/react/input";
 
 /**
- * Módulo (Sandbox) - Galeria dos tipos de Input no modo selecionado
+ * Módulo (Sandbox) - Input controlado e integração com formulário
  */
 export function InputStage() {
-    const [values, setValues] = useState("");
+    const [value, setValue] = useState("");
+    const { control, watch } = useForm({ defaultValues: { name: "" } });
+    const formValue = watch("name");
     /*
     |------------------------------------------
     | render() - Renderização do componente
     |------------------------------------------
     */
     return (
-        <Box as="section">
-            <Input
-                required
-                icon="gear"
-                id="input-example-text"
-                label="Entrada de texto"
-                name="input-example"
-                placeholder="Digite um texto"
-                value={values}
-                onChange={setValues}/>
-        </Box>
+        <section className="mb-10 flex w-full flex-col gap-6">
+            <div className="flex flex-col gap-2">
+                <Input
+                    required
+                    icon="gear"
+                    label="Input controlado"
+                    name="input-controlled"
+                    placeholder="Digite um texto"
+                    value={value}
+                    onChange={setValue}/>
+                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+            </div>
+            <div className="flex flex-col gap-2">
+                <Input
+                    required
+                    control={control}
+                    label="Input com HookForm"
+                    mode="HookForm"
+                    name="name"
+                    placeholder="Digite um texto"/>
+                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+            </div>
+        </section>
     );
 }
+
+InputStage.displayName = "InputStage";

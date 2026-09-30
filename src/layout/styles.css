@@ -2,6 +2,21 @@
 @import "tailwindcss";
 @import "../../../react/src/style/style.css";
 
+/* Personalização da paleta do pacote pelo aplicativo consumidor. */
+:root {
+  --color-primary-50: var(--color-violet-50);
+  --color-primary-100: var(--color-violet-100);
+  --color-primary-200: var(--color-violet-200);
+  --color-primary-300: var(--color-violet-300);
+  --color-primary-400: color-mix(in oklab, var(--color-violet-300) 50%, var(--color-violet-400));
+  --color-primary-500: #a78bfa;
+  --color-primary-600: var(--color-violet-500);
+  --color-primary-700: var(--color-violet-600);
+  --color-primary-800: var(--color-violet-700);
+  --color-primary-900: var(--color-violet-800);
+  --color-primary-950: var(--color-violet-950);
+}
+
 @theme static {
   --color-canvas: #090a0f;
   --color-header: #0e0f16;
