@@ -21,19 +21,6 @@ export function InputStage() {
                 label="Entrada de texto"
                 name="input-example"
                 placeholder="Digite um texto"
-                size={{ base: "100", lg: "25" }}
-                type="text"
-                value={values}
-                onChange={setValues}/>
-            <Input
-                required
-                icon="gear"
-                id="input-example-number"
-                label="Entrada de número"
-                name="input-example-number"
-                placeholder="Digite um número"
-                size={{ base: "100", lg: "25" }}
-                type="number"
                 value={values}
                 onChange={setValues}/>
         </Box>
