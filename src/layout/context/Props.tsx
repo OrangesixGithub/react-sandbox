@@ -1,49 +1,35 @@
 import { Title } from "./Title";
-import type { ReactNode } from "react";
 import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
-import { BoxProps } from "../../components/box/Props";
-import { InputProps } from "../../components/input/Props";
-import { ButtonProps } from "../../components/button/Props";
-import { SelectProps } from "../../components/select/Props";
+import { TypeBadges } from "../../core/TypeBadges";
+import { boxProps } from "../../components/box/Props";
+import { uiApiProps } from "../../core/style/ui-props";
+import { radioProps } from "../../components/radio/Props";
+import { inputProps } from "../../components/input/Props";
+import { buttonProps } from "../../components/button/Props";
+import { selectProps } from "../../components/select/Props";
 import type { ContextSelectionProps } from "../@types/context";
+
+const componentProps = {
+    Box: boxProps,
+    Button: buttonProps,
+    Input: inputProps,
+    Select: selectProps,
+    Radio: radioProps,
+};
 
 /**
  * Módulo (Sandbox) - Referência de propriedades
  */
 export function Props(props: ContextSelectionProps) {
-    let component: ReactNode;
-
-    switch (props.selected) {
-        case "Box":
-            component = <BoxProps/>;
-            break;
-        case "Button":
-            component = <ButtonProps/>;
-            break;
-        case "Input":
-            component = <InputProps/>;
-            break;
-        case "Select":
-            component = <SelectProps/>;
-            break;
-        default:
-            component = (
-                <div className={uiProps.placeholder}>
-                    <i aria-hidden="true"
-                        className={uiProps.icon}/>
-                    <p>As propriedades de {props.selected} serão listadas aqui.</p>
-                </div>
-            );
-    }
-
     /*
     |------------------------------------------
     | render() - Renderização do componente
     |------------------------------------------
     */
     return (
-        <section aria-labelledby="props-title"
+        <section
+            aria-labelledby="props-title"
             className={uiSections.section}>
             <Title
                 aside="API do componente"
@@ -57,7 +43,17 @@ export function Props(props: ContextSelectionProps) {
                     <span>TIPO</span>
                     <span>DESCRIÇÃO</span>
                 </div>
-                {component}
+                <div>
+                    {componentProps[props.selected].map(item => (
+                        <div
+                            className={uiApiProps.row}
+                            key={item.name}>
+                            <code className={uiApiProps.name}>{item.name}</code>
+                            <span className={uiApiProps.type}><TypeBadges value={item.type}/></span>
+                            <span className={uiApiProps.description}>{item.description}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );

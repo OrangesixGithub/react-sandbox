@@ -1,7 +1,4 @@
-import { TypeBadges } from "../../core/TypeBadges";
-import { uiApiProps } from "../../core/style/ui-props";
-
-const inputProps = [
+export const inputProps = [
     { name: "mode / control", type: "Controlled | HookForm", description: "Modo de controle do valor e objeto do React Hook Form." },
     { name: "type", type: "text | email | number | password | date | time", description: "Tipo de campo. CPF e CNPJ usam mask com type text." },
     { name: "sizes", type: "small | large", description: "Tamanho visual do campo; sem valor usa o tamanho normal." },
@@ -12,27 +9,3 @@ const inputProps = [
     { name: "password*", type: "boolean / template", description: "Visibilidade, feedback e templates de senha." },
     { name: "required / disabled / readonly", type: "boolean", description: "Estados do campo." },
 ] as const;
-
-/**
- * Módulo (Sandbox) - Propriedades do Input
- */
-export function InputProps() {
-    /*
-    |------------------------------------------
-    | render() - Renderização do componente
-    |------------------------------------------
-    */
-    return (
-        <div>
-            {inputProps.map(item => (
-                <div
-                    className={uiApiProps.row}
-                    key={item.name}>
-                    <code className={uiApiProps.name}>{item.name}</code>
-                    <span className={uiApiProps.type}><TypeBadges value={item.type}/></span>
-                    <span className={uiApiProps.description}>{item.description}</span>
-                </div>
-            ))}
-        </div>
-    );
-}
