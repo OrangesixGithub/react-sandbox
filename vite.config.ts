@@ -19,6 +19,9 @@ export default defineConfig(({ mode }) => {
     const inputDir = isPackage && !existsSync(path.resolve(libraryDir, "input/package.json"))
         ? path.resolve(libraryRoot, "src/input")
         : path.resolve(libraryDir, "input");
+    const selectDir = isPackage && !existsSync(path.resolve(libraryDir, "select/package.json"))
+        ? path.resolve(libraryRoot, "src/select")
+        : path.resolve(libraryDir, "select");
     const packageFile = path.resolve(isPackage ? libraryDir : libraryRoot, "package.json");
     const styleFile = isPackage
         ? path.resolve(libraryDir, "style.css")
@@ -82,6 +85,10 @@ export default defineConfig(({ mode }) => {
                 {
                     find: /^@orangesix\/react\/input$/,
                     replacement: inputDir,
+                },
+                {
+                    find: /^@orangesix\/react\/select$/,
+                    replacement: selectDir,
                 },
                 {
                     find: /^@orangesix\/react\/(.+)$/,

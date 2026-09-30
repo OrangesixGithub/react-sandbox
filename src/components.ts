@@ -1,7 +1,8 @@
 export const componentNames = [
     "Box",
     "Button",
-    "Input"
+    "Input",
+    "Select"
 ] as const;
 
 export type ComponentName = (typeof componentNames)[number];
@@ -17,6 +18,10 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     },
     Input: {
         icon: "bi bi-input-cursor-text",
+        iframe: true,
+    },
+    Select: {
+        icon: "bi bi-list",
         iframe: true,
     },
 };

@@ -1,6 +1,7 @@
-import type { PanelContentProps } from "../@types/panel";
 import { BoxStage } from "../../components/box/Stage";
+import type { PanelContentProps } from "../@types/panel";
 import { InputStage } from "../../components/input/Stage";
+import { SelectStage } from "../../components/select/Stage";
 import { ButtonStage } from "../../components/button/Stage";
 
 /**
@@ -20,6 +21,8 @@ export function ComponentPreview(props: PanelContentProps) {
                 && <ButtonStage/>}
             {props.selected === "Input"
                 && <InputStage/>}
+            {props.selected === "Select"
+                && <SelectStage/>}
         </>
     );
 }
