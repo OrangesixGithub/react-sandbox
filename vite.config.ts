@@ -34,6 +34,12 @@ export default defineConfig(({ mode }) => {
     const multiselectDir = isPackage && !existsSync(path.resolve(libraryDir, "multiselect/package.json"))
         ? path.resolve(libraryRoot, "src/multiselect")
         : path.resolve(libraryDir, "multiselect");
+    const textareaDir = isPackage && !existsSync(path.resolve(libraryDir, "textarea/package.json"))
+        ? path.resolve(libraryRoot, "src/textarea")
+        : path.resolve(libraryDir, "textarea");
+    const autocompleteDir = isPackage && !existsSync(path.resolve(libraryDir, "autocomplete/package.json"))
+        ? path.resolve(libraryRoot, "src/autocomplete")
+        : path.resolve(libraryDir, "autocomplete");
     const packageFile = path.resolve(isPackage ? libraryDir : libraryRoot, "package.json");
     const styleFile = isPackage
         ? path.resolve(libraryDir, "style.css")
@@ -81,6 +87,7 @@ export default defineConfig(({ mode }) => {
                 ".d.ts",
             ],
             alias: [
+                { find: /^@orangesix\/react\/autocomplete$/, replacement: autocompleteDir },
                 {
                     find: /^@assets\/(.+)$/,
                     replacement: `${path.resolve(sandboxRoot, "assets")}/$1`,
@@ -117,6 +124,10 @@ export default defineConfig(({ mode }) => {
                 {
                     find: /^@orangesix\/react\/multiselect$/,
                     replacement: multiselectDir,
+                },
+                {
+                    find: /^@orangesix\/react\/textarea$/,
+                    replacement: textareaDir,
                 },
                 {
                     find: /^@orangesix\/react\/(.+)$/,

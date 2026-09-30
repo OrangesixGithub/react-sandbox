@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "paths": {
+      "@orangesix/react/autocomplete": ["../react/dist/autocomplete", "../react/src/autocomplete"],
       "@assets/*": ["./assets/*"],
+      "@orangesix/react/textarea": ["../react/dist/textarea", "../react/src/textarea"],
       "@orangesix/react/multiselect": ["../react/dist/multiselect", "../react/src/multiselect"],
       "@orangesix/react/checkbox": ["../react/dist/checkbox", "../react/src/checkbox"],
       "@orangesix/react/switch": ["../react/dist/switch", "../react/src/switch"],

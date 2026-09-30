@@ -6,14 +6,16 @@ import { boxProps } from "../../components/box/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
-import { checkboxProps } from "../../components/checkbox/Props";
 import { switchProps } from "../../components/switch/Props";
 import { buttonProps } from "../../components/button/Props";
 import { selectProps } from "../../components/select/Props";
 import type { ContextSelectionProps } from "../@types/context";
+import { checkboxProps } from "../../components/checkbox/Props";
+import { textareaProps } from "../../components/textarea/Props";
 import { multiselectProps } from "../../components/multiselect/Props";
-
+import { autocompleteProps } from "../../components/autocomplete/Props";
 const componentProps = {
+    Autocomplete: autocompleteProps,
     Box: boxProps,
     Button: buttonProps,
     Input: inputProps,
@@ -22,6 +24,7 @@ const componentProps = {
     Switch: switchProps,
     Checkbox: checkboxProps,
     MultiSelect: multiselectProps,
+    Textarea: textareaProps,
 };
 
 /**

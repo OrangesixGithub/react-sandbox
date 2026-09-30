@@ -1,13 +1,14 @@
 import { BoxStage } from "../../components/box/Stage";
-import { RadioStage } from "../../components/radio/Stage";
 import type { PanelContentProps } from "../@types/panel";
+import { RadioStage } from "../../components/radio/Stage";
 import { InputStage } from "../../components/input/Stage";
-import { CheckboxStage } from "../../components/checkbox/Stage";
 import { SwitchStage } from "../../components/switch/Stage";
 import { ButtonStage } from "../../components/button/Stage";
 import { SelectStage } from "../../components/select/Stage";
+import { CheckboxStage } from "../../components/checkbox/Stage";
+import { TextareaStage } from "../../components/textarea/Stage";
 import { MultiSelectStage } from "../../components/multiselect/Stage";
-
+import { AutocompleteStage } from "../../components/autocomplete/Stage";
 /**
  * Módulo (Sandbox) - Conteúdo compartilhado das prévias
  */
@@ -19,6 +20,7 @@ export function ComponentPreview(props: PanelContentProps) {
     */
     return (
         <>
+            {props.selected === "Autocomplete" && <AutocompleteStage/>}
             {props.selected === "Box"
                 && <BoxStage/>}
             {props.selected === "Button"
@@ -28,6 +30,7 @@ export function ComponentPreview(props: PanelContentProps) {
             {props.selected === "Checkbox" && <CheckboxStage/>}
             {props.selected === "Switch" && <SwitchStage/>}
             {props.selected === "MultiSelect" && <MultiSelectStage/>}
+            {props.selected === "Textarea" && <TextareaStage/>}
             {props.selected === "Radio" && <RadioStage/>}
             {props.selected === "Select"
                 && <SelectStage/>}
