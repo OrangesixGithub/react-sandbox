@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "paths": {
+      "@orangesix/react/editor": ["../react/dist/editor", "../react/src/editor"],
       "@orangesix/react/autocomplete": ["../react/dist/autocomplete", "../react/src/autocomplete"],
       "@assets/*": ["./assets/*"],
       "@orangesix/react/textarea": ["../react/dist/textarea", "../react/src/textarea"],

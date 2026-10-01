@@ -6,6 +6,7 @@ import { boxProps } from "../../components/box/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
+import { editorProps } from "../../components/editor/Props";
 import { switchProps } from "../../components/switch/Props";
 import { buttonProps } from "../../components/button/Props";
 import { selectProps } from "../../components/select/Props";
@@ -14,7 +15,9 @@ import { checkboxProps } from "../../components/checkbox/Props";
 import { textareaProps } from "../../components/textarea/Props";
 import { multiselectProps } from "../../components/multiselect/Props";
 import { autocompleteProps } from "../../components/autocomplete/Props";
+
 const componentProps = {
+    Editor: editorProps,
     Autocomplete: autocompleteProps,
     Box: boxProps,
     Button: buttonProps,

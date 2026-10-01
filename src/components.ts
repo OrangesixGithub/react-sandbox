@@ -8,7 +8,8 @@ export const componentNames = [
     "Checkbox",
     "MultiSelect",
     "Autocomplete",
-    "Textarea"
+    "Textarea",
+    "Editor"
 ] as const;
 
 export type ComponentName = (typeof componentNames)[number];
@@ -23,6 +24,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Switch: { icon: "bi bi-toggle-on", iframe: true },
     MultiSelect: { icon: "bi bi-ui-checks", iframe: true },
     Select: { icon: "bi bi-list", iframe: true, },
+    Editor: { icon: "bi bi-pencil-square", iframe: true },
     Textarea: { icon: "bi bi-textarea-resize", iframe: true },
 };
 

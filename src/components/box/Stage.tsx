@@ -52,7 +52,6 @@ export function BoxStage() {
             <Box
                 align="items-center"
                 aria-label="Exemplo de Box responsivo"
-                as="section"
                 className="gap-2 rounded-lg border border-accent bg-accent/10 p-3"
                 direction="row"
                 justify="justify-between"

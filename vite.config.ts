@@ -16,30 +16,6 @@ const libraryRoot = path.resolve(sandboxRoot, "../react");
 export default defineConfig(({ mode }) => {
     const isPackage = mode === "package";
     const libraryDir = path.resolve(libraryRoot, isPackage ? "dist" : "src");
-    const inputDir = isPackage && !existsSync(path.resolve(libraryDir, "input/package.json"))
-        ? path.resolve(libraryRoot, "src/input")
-        : path.resolve(libraryDir, "input");
-    const selectDir = isPackage && !existsSync(path.resolve(libraryDir, "select/package.json"))
-        ? path.resolve(libraryRoot, "src/select")
-        : path.resolve(libraryDir, "select");
-    const radioDir = isPackage && !existsSync(path.resolve(libraryDir, "radio/package.json"))
-        ? path.resolve(libraryRoot, "src/radio")
-        : path.resolve(libraryDir, "radio");
-    const switchDir = isPackage && !existsSync(path.resolve(libraryDir, "switch/package.json"))
-        ? path.resolve(libraryRoot, "src/switch")
-        : path.resolve(libraryDir, "switch");
-    const checkboxDir = isPackage && !existsSync(path.resolve(libraryDir, "checkbox/package.json"))
-        ? path.resolve(libraryRoot, "src/checkbox")
-        : path.resolve(libraryDir, "checkbox");
-    const multiselectDir = isPackage && !existsSync(path.resolve(libraryDir, "multiselect/package.json"))
-        ? path.resolve(libraryRoot, "src/multiselect")
-        : path.resolve(libraryDir, "multiselect");
-    const textareaDir = isPackage && !existsSync(path.resolve(libraryDir, "textarea/package.json"))
-        ? path.resolve(libraryRoot, "src/textarea")
-        : path.resolve(libraryDir, "textarea");
-    const autocompleteDir = isPackage && !existsSync(path.resolve(libraryDir, "autocomplete/package.json"))
-        ? path.resolve(libraryRoot, "src/autocomplete")
-        : path.resolve(libraryDir, "autocomplete");
     const packageFile = path.resolve(isPackage ? libraryDir : libraryRoot, "package.json");
     const styleFile = isPackage
         ? path.resolve(libraryDir, "style.css")
@@ -86,54 +62,11 @@ export default defineConfig(({ mode }) => {
                 ".json",
                 ".d.ts",
             ],
-            alias: [
-                { find: /^@orangesix\/react\/autocomplete$/, replacement: autocompleteDir },
-                {
-                    find: /^@assets\/(.+)$/,
-                    replacement: `${path.resolve(sandboxRoot, "assets")}/$1`,
-                },
-                {
-                    // Caminho relativo no CSS permite a resolução pelo serviço Tailwind do editor.
-                    find: "../../../react/src/style/style.css",
-                    replacement: styleFile,
-                },
-                {
-                    find: /^@orangesix\/react\/style\.css$/,
-                    replacement: styleFile,
-                },
-                {
-                    find: /^@orangesix\/react\/input$/,
-                    replacement: inputDir,
-                },
-                {
-                    find: /^@orangesix\/react\/select$/,
-                    replacement: selectDir,
-                },
-                {
-                    find: /^@orangesix\/react\/radio$/,
-                    replacement: radioDir,
-                },
-                {
-                    find: /^@orangesix\/react\/switch$/,
-                    replacement: switchDir,
-                },
-                {
-                    find: /^@orangesix\/react\/checkbox$/,
-                    replacement: checkboxDir,
-                },
-                {
-                    find: /^@orangesix\/react\/multiselect$/,
-                    replacement: multiselectDir,
-                },
-                {
-                    find: /^@orangesix\/react\/textarea$/,
-                    replacement: textareaDir,
-                },
-                {
-                    find: /^@orangesix\/react\/(.+)$/,
-                    replacement: `${libraryDir}/$1`,
-                },
-            ],
+            alias: {
+                "../../../react/src/style/style.css": styleFile,
+                "@assets": path.resolve(sandboxRoot, "assets"),
+                "@orangesix/react": libraryDir,
+            },
         },
         server: {
             fs: { allow: [sandboxRoot, libraryRoot] },
