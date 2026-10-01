@@ -7,6 +7,7 @@ import { SwitchStage } from "../../components/switch/Stage";
 import { ButtonStage } from "../../components/button/Stage";
 import { SelectStage } from "../../components/select/Stage";
 import { CalendarStage } from "../../components/calendar/Stage";
+import { AccordionStage } from "../../components/accordion/Stage";
 import { CheckboxStage } from "../../components/checkbox/Stage";
 import { TextareaStage } from "../../components/textarea/Stage";
 import { InputFilterStage } from "../../components/inputfilter/Stage";
@@ -24,6 +25,7 @@ export function ComponentPreview(props: PanelContentProps) {
     */
     return (
         <>
+            {props.selected === "Accordion" && <AccordionStage/>}
             {props.selected === "Calendar" && <CalendarStage/>}
             {props.selected === "Editor" && <EditorStage/>}
             {props.selected === "Autocomplete" && <AutocompleteStage/>}

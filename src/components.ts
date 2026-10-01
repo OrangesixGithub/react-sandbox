@@ -1,4 +1,5 @@
 export const componentNames = [
+    "Accordion",
     "Box",
     "Button",
     "Input",
@@ -17,6 +18,7 @@ export const componentNames = [
 export type ComponentName = (typeof componentNames)[number];
 
 export const components: Record<ComponentName, { icon: string; iframe: boolean }> = {
+    Accordion: { icon: "bi bi-chevron-bar-expand", iframe: true },
     Calendar: { icon: "bi bi-calendar", iframe: true },
     Autocomplete: { icon: "bi bi-search", iframe: true },
     Box: { icon: "bi bi-box", iframe: false, },
