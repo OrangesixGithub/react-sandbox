@@ -5,7 +5,7 @@ import { Editor } from "@orangesix/react/editor";
  * Módulo (Sandbox) - Editor de texto controlado
  */
 export function EditorStage() {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<any>("");
     /*
     |------------------------------------------
     | render() - Renderização do componente

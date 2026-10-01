@@ -9,12 +9,15 @@ export const componentNames = [
     "MultiSelect",
     "Autocomplete",
     "Textarea",
+    "Calendar",
+    "InputFilter",
     "Editor"
 ] as const;
 
 export type ComponentName = (typeof componentNames)[number];
 
 export const components: Record<ComponentName, { icon: string; iframe: boolean }> = {
+    Calendar: { icon: "bi bi-calendar", iframe: true },
     Autocomplete: { icon: "bi bi-search", iframe: true },
     Box: { icon: "bi bi-box", iframe: false, },
     Button: { icon: "bi bi-box-arrow-up-left", iframe: false, },
@@ -26,6 +29,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Select: { icon: "bi bi-list", iframe: true, },
     Editor: { icon: "bi bi-pencil-square", iframe: true },
     Textarea: { icon: "bi bi-textarea-resize", iframe: true },
+    InputFilter: { icon: "bi bi-funnel", iframe: true },
 };
 
 export function componentId(name: ComponentName) {

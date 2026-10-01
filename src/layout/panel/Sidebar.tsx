@@ -11,9 +11,9 @@ import { components, componentNames } from "../../components.ts";
 export function Sidebar(props: PanelSidebarProps) {
     const styles = uiSidebar();
     const [query, setQuery] = useState("");
-    const visibleComponents = componentNames.filter((name) =>
-        name.toLowerCase().includes(query.trim().toLowerCase()),
-    );
+    const visibleComponents = componentNames
+        .filter((name) => name.toLowerCase().includes(query.trim().toLowerCase()))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
 
     /*
     |------------------------------------------

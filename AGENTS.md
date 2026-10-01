@@ -1,5 +1,13 @@
 # Padrão de escrita para IA
 
+## Preferência de navegação
+
+Mantenha os menus de componentes do sandbox em ordem alfabética, inclusive nos resultados da busca. Ao adicionar novos componentes, preserve essa ordenação automaticamente.
+
+## Padrão das páginas de campos
+
+Siga `../react/docs/sandbox.md`: apresente os exemplos Controlled e HookForm quando ambos forem suportados, com valores iniciais vazios e o valor atual exibido abaixo de cada campo (`Valor do state:` e `Valor do HookForm:`, com `JSON.stringify`). Preserve a seção em coluna com `gap-6` e cada exemplo em coluna com `gap-2`. Não adicione exemplos extras de variações ou estados à página padrão sem solicitação do dono do projeto.
+
 Use estas regras ao criar ou editar arquivos do projeto. Antes de concluir uma alteração, confira os arquivos modificados e preserve o padrão descrito aqui.
 
 ## 1. Imports em escada

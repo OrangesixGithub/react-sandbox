@@ -11,12 +11,15 @@ import { switchProps } from "../../components/switch/Props";
 import { buttonProps } from "../../components/button/Props";
 import { selectProps } from "../../components/select/Props";
 import type { ContextSelectionProps } from "../@types/context";
+import { calendarProps } from "../../components/calendar/Props";
 import { checkboxProps } from "../../components/checkbox/Props";
 import { textareaProps } from "../../components/textarea/Props";
+import { inputfilterProps } from "../../components/inputfilter/Props";
 import { multiselectProps } from "../../components/multiselect/Props";
 import { autocompleteProps } from "../../components/autocomplete/Props";
 
 const componentProps = {
+    Calendar: calendarProps,
     Editor: editorProps,
     Autocomplete: autocompleteProps,
     Box: boxProps,
@@ -28,6 +31,7 @@ const componentProps = {
     Checkbox: checkboxProps,
     MultiSelect: multiselectProps,
     Textarea: textareaProps,
+    InputFilter: inputfilterProps,
 };
 
 /**
