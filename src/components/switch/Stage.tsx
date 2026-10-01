@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Switch } from "@orangesix/react/switch";
 
 /**
@@ -27,7 +28,9 @@ export function SwitchStage() {
                     valueFalse="nao"
                     valueTrue="sim"
                     onChange={setValue}/>
-                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Switch
@@ -39,7 +42,9 @@ export function SwitchStage() {
                     name="notify"
                     valueFalse="nao"
                     valueTrue="sim"/>
-                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={formValue}/>
             </div>
         </section>
     );

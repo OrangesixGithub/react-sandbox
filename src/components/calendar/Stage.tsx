@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Calendar } from "@orangesix/react/calendar";
 
 /**
@@ -52,7 +53,9 @@ export function CalendarStage() {
                     selectionMode={multiple ? "multiple" : "single"}
                     value={value}
                     onChange={setValue}/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Calendar
@@ -64,7 +67,9 @@ export function CalendarStage() {
                     placeholder="dd/mm/aaaa"
                     range={range}
                     selectionMode={multiple ? "multiple" : "single"}/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={formValue}/>
             </div>
         </section>
     );

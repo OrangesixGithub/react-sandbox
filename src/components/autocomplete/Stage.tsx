@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Autocomplete } from "@orangesix/react/autocomplete";
 import type { AutocompleteDataProps } from "@orangesix/react/autocomplete";
 
@@ -41,7 +42,9 @@ export function AutocompleteStage() {
                     value={value}
                     onChange={setValue}
                     onSearch={query => setData(search(query))}/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Autocomplete
@@ -53,7 +56,9 @@ export function AutocompleteStage() {
                     name="department"
                     placeholder="Busque um departamento"
                     onSearch={query => setData(search(query))}/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(departament)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={departament}/>
             </div>
         </section>
     );

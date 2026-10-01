@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Legend } from "../../core/Legend";
 import { Editor } from "@orangesix/react/editor";
 
 /**
@@ -24,7 +25,9 @@ export function EditorStage() {
                     placeholder="Digite e formate um texto"
                     value={value}
                     onChange={setValue}/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
         </section>
     );

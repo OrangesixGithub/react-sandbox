@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Checkbox } from "@orangesix/react/checkbox";
 
 const options = [
@@ -32,7 +33,9 @@ export function CheckboxStage() {
                     options={options}
                     value={value}
                     onChange={setValue}/>
-                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Checkbox
@@ -42,7 +45,9 @@ export function CheckboxStage() {
                     mode="HookForm"
                     name="permissions"
                     options={options}/>
-                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={formValue}/>
             </div>
         </section>
     );

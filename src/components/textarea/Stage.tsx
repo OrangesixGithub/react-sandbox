@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Textarea } from "@orangesix/react/textarea";
 
 /**
@@ -25,7 +26,9 @@ export function TextareaStage() {
                     placeholder="Digite um texto"
                     value={value}
                     onChange={setValue}/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Textarea
@@ -35,7 +38,9 @@ export function TextareaStage() {
                     mode="HookForm"
                     name="description"
                     placeholder="Digite um texto"/>
-                <p className="max-w-full overflow-x-auto whitespace-nowrap text-xs text-neutral-500 scrollbar-themed">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={formValue}/>
             </div>
         </section>
     );

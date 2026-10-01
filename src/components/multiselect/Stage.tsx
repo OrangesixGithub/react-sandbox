@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { MultiSelect } from "@orangesix/react/multiselect";
 
 const options = [
@@ -34,7 +35,9 @@ export function MultiSelectStage() {
                     placeholder="Selecione os departamentos"
                     value={value}
                     onChange={setValue}/>
-                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <MultiSelect
@@ -46,7 +49,9 @@ export function MultiSelectStage() {
                     name="departments"
                     options={options}
                     placeholder="Selecione os departamentos"/>
-                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(departments)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={departments}/>
             </div>
         </section>
     );

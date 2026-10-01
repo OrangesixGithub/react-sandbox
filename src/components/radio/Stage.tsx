@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Radio } from "@orangesix/react/radio";
 
 const options = [
@@ -31,7 +32,9 @@ export function RadioStage() {
                     options={options}
                     value={value}
                     onChange={setValue}/>
-                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Radio
@@ -41,7 +44,9 @@ export function RadioStage() {
                     mode="HookForm"
                     name="status"
                     options={options}/>
-                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={formValue}/>
             </div>
         </section>
     );

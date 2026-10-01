@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Input } from "@orangesix/react/input";
 
 /**
@@ -25,7 +26,9 @@ export function InputStage() {
                     placeholder="Digite um texto"
                     value={value}
                     onChange={setValue}/>
-                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Input
@@ -35,7 +38,9 @@ export function InputStage() {
                     mode="HookForm"
                     name="name"
                     placeholder="Digite um texto"/>
-                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(formValue)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={formValue}/>
             </div>
         </section>
     );

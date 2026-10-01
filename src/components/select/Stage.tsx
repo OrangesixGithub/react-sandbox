@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Legend } from "../../core/Legend";
 import { Select } from "@orangesix/react/select";
 
 const options = [
@@ -32,7 +33,9 @@ export function SelectStage() {
                     options={options}
                     value={value}
                     onChange={setValue}/>
-                <p className="text-xs text-neutral-500">Valor do state: <code className="text-primary-400">{JSON.stringify(value)}</code></p>
+                <Legend
+                    origin="state"
+                    value={value}/>
             </div>
             <div className="flex flex-col gap-2">
                 <Select
@@ -43,7 +46,9 @@ export function SelectStage() {
                     mode="HookForm"
                     name="status"
                     options={options}/>
-                <p className="text-xs text-neutral-500">Valor do HookForm: <code className="text-primary-400">{JSON.stringify(status)}</code></p>
+                <Legend
+                    origin="HookForm"
+                    value={status}/>
             </div>
         </section>
     );
