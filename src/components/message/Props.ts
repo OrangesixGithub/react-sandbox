@@ -1,0 +1,16 @@
+export const messageProps = [
+    { name: "draggable", type: "boolean", description: "Permite arrastar pelo cabeçalho no documento de destino, inclusive fora do iframe. Padrão: true." },
+    { name: "appendTo", type: "HTMLElement | função | self | null", description: "Destino da modal. Padrão: self. Aceita elemento ou função que retorna um elemento; null usa o body. O destino deve receber o tema e o CSS da biblioteca." },
+    { name: "type", type: "\"modal\"", description: "Tipo da mensagem. Padrão: modal." },
+    { name: "visible / onVisible", type: "boolean / função", description: "Visibilidade controlada e callback de fechamento." },
+    { name: "message", type: "string", description: "Conteúdo HTML da mensagem, fornecido pela aplicação." },
+    { name: "title", type: "string", description: "Título. Padrão: Confirmação." },
+    { name: "confirm / cancel", type: "boolean", description: "Exibe as ações de confirmar e cancelar. Padrão: true." },
+    { name: "confirmLabel / cancelarLabel", type: "string", description: "Rótulos das ações. Padrão: Confirmar e Cancelar." },
+    { name: "onConfirm / onCancel", type: "função", description: "Callbacks das ações. Sem onCancel, cancelar chama onVisible(false)." },
+    { name: "isLoading", type: "boolean", description: "Carregamento do botão de confirmação." },
+    { name: "modalIcon / modalIconPrefix", type: "string", description: "Ícone do título. Padrão: cone-striped e bi bi-. Aceita prefixo pi pi-." },
+    { name: "modalOptionsPosition", type: "\"start\" | \"center\" | \"end\"", description: "Alinhamento das ações. Padrão: end." },
+    { name: "modalClosable", type: "boolean", description: "Exibe o botão de fechar. Padrão: true." },
+    { name: "modalZIndex", type: "number", description: "Base do z-index do PrimeReact. Padrão: 1000." },
+] as const;

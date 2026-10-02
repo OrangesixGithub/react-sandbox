@@ -17,6 +17,16 @@ export function ButtonStage() {
                 <Button
                     icon="save"
                     label="Ação"
+                    size="small"
+                    onClick={() => setClicks(count => count + 1)}/>
+                <Button
+                    icon="save"
+                    label="Ação"
+                    onClick={() => setClicks(count => count + 1)}/>
+                <Button
+                    icon="save"
+                    label="Ação"
+                    size="large"
                     onClick={() => setClicks(count => count + 1)}/>
             </div>
             <p className="text-xs text-slate-500 dark:text-muted">Cliques no botão principal: {clicks}</p>

@@ -6,21 +6,29 @@ import { boxProps } from "../../components/box/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
+import { selectProps } from "../../components/select/Props";
+import { buttonProps } from "../../components/button/Props";
 import { editorProps } from "../../components/editor/Props";
 import { switchProps } from "../../components/switch/Props";
-import { buttonProps } from "../../components/button/Props";
-import { selectProps } from "../../components/select/Props";
+import { messageProps } from "../../components/message/Props";
+import { loadingProps } from "../../components/loading/Props";
+import { tabviewProps } from "../../components/tabview/Props";
 import type { ContextSelectionProps } from "../@types/context";
 import { calendarProps } from "../../components/calendar/Props";
-import { accordionProps } from "../../components/accordion/Props";
 import { checkboxProps } from "../../components/checkbox/Props";
 import { textareaProps } from "../../components/textarea/Props";
+import { lightboxProps } from "../../components/lightbox/Props";
+import { accordionProps } from "../../components/accordion/Props";
 import { inputfilterProps } from "../../components/inputfilter/Props";
 import { multiselectProps } from "../../components/multiselect/Props";
 import { autocompleteProps } from "../../components/autocomplete/Props";
 
 const componentProps = {
+    Lightbox: lightboxProps,
+    Loading: loadingProps,
     Accordion: accordionProps,
+    TabView: tabviewProps,
+    Message: messageProps,
     Calendar: calendarProps,
     Editor: editorProps,
     Autocomplete: autocompleteProps,

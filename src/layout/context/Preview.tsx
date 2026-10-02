@@ -78,7 +78,9 @@ export function Preview(props: PanelContentProps) {
                         </div>
                         <span>React</span>
                     </div>
-                    <div className={`${uiPreview.canvas} ${theme === "dark" ? "dark bg-preview text-copy" : "bg-white text-slate-900"}`}>
+                    <div
+                        data-preview-overlay-host
+                        className={`${uiPreview.canvas} ${theme === "dark" ? "dark bg-preview text-copy" : "bg-white text-slate-900"}`}>
                         <ComponentPreview selected={props.selected}/>
                     </div>
                 </div>

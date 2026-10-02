@@ -3,6 +3,9 @@ export const componentNames = [
     "Box",
     "Button",
     "Input",
+    "Lightbox",
+    "Loading",
+    "Message",
     "Select",
     "Radio",
     "Switch",
@@ -12,7 +15,8 @@ export const componentNames = [
     "Textarea",
     "Calendar",
     "InputFilter",
-    "Editor"
+    "Editor",
+    "TabView"
 ] as const;
 
 export type ComponentName = (typeof componentNames)[number];
@@ -24,6 +28,9 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Box: { icon: "bi bi-box", iframe: false, },
     Button: { icon: "bi bi-box-arrow-up-left", iframe: false, },
     Input: { icon: "bi bi-input-cursor-text", iframe: true, },
+    Message: { icon: "bi bi-chat-square-text", iframe: true },
+    Lightbox: { icon: "bi bi-images", iframe: true },
+    Loading: { icon: "bi bi-arrow-repeat", iframe: true },
     Radio: { icon: "bi bi-record-circle", iframe: true },
     Checkbox: { icon: "bi bi-check2-square", iframe: true },
     Switch: { icon: "bi bi-toggle-on", iframe: true },
@@ -32,6 +39,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Editor: { icon: "bi bi-pencil-square", iframe: true },
     Textarea: { icon: "bi bi-textarea-resize", iframe: true },
     InputFilter: { icon: "bi bi-funnel", iframe: true },
+    TabView: { icon: "bi bi-segmented-nav", iframe: true },
 };
 
 export function componentId(name: ComponentName) {
