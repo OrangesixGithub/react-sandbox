@@ -1,6 +1,6 @@
 export const loadingProps = [
     { name: "visible", type: "boolean", description: "Define se o loading é exibido." },
-    { name: "type", type: "\"border\" | \"grow\"", description: "Indicador padrão: anel girando (border) ou pontos pulsando (grow). Ignorado quando há children." },
+    { name: "type", type: "\"border\" | \"grow\" | \"bars\" | \"pulse\" | \"orbit\"", description: "Indicador padrão: anel (border), pontos (grow), barras (bars), onda (pulse) ou anéis opostos (orbit). Ignorado quando há children." },
     { name: "children", type: "ReactNode", description: "Conteúdo personalizado no centro do loading, como uma animação feita com motion." },
     { name: "text", type: "string", description: "Mensagem exibida abaixo do indicador." },
     { name: "color", type: "ColorProps", description: "Cor do indicador e da mensagem. Padrão: white." },
