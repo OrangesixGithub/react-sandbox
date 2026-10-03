@@ -1,5 +1,6 @@
 import { BoxStage } from "../../components/box/Stage";
 import type { PanelContentProps } from "../@types/panel";
+import { ModalStage } from "../../components/modal/Stage";
 import { RadioStage } from "../../components/radio/Stage";
 import { InputStage } from "../../components/input/Stage";
 import { EditorStage } from "../../components/editor/Stage";
@@ -13,6 +14,7 @@ import { TextareaStage } from "../../components/textarea/Stage";
 import { CheckboxStage } from "../../components/checkbox/Stage";
 import { CalendarStage } from "../../components/calendar/Stage";
 import { LightboxStage } from "../../components/lightbox/Stage";
+import { PickListStage } from "../../components/picklist/Stage";
 import { AccordionStage } from "../../components/accordion/Stage";
 import { InputFilterStage } from "../../components/inputfilter/Stage";
 import { MultiSelectStage } from "../../components/multiselect/Stage";
@@ -33,6 +35,8 @@ export function ComponentPreview(props: PanelContentProps) {
             {props.selected === "Loading" && <LoadingStage/>}
             {props.selected === "Accordion" && <AccordionStage/>}
             {props.selected === "Message" && <MessageStage/>}
+            {props.selected === "Modal" && <ModalStage/>}
+            {props.selected === "PickList" && <PickListStage/>}
             {props.selected === "TabView" && <TabviewStage/>}
             {props.selected === "Calendar" && <CalendarStage/>}
             {props.selected === "Editor" && <EditorStage/>}

@@ -1,0 +1,17 @@
+export const modalProps = [
+    { name: "visible / onVisible", type: "boolean / função", description: "Visibilidade controlada. Fechar chama onVisible(false)." },
+    { name: "children", type: "ReactNode", description: "Conteúdo da janela." },
+    { name: "header", type: "ReactNode | false", description: "Cabeçalho da janela; false oculta o cabeçalho e seus botões." },
+    { name: "footer", type: "ReactNode", description: "Conteúdo do rodapé." },
+    { name: "sizes", type: "\"small\" | \"medium\" | \"large\" | \"extra-large\"", description: "Larguras de 300px, 500px, 800px e 80%, com ajuste em telas menores. Sem valor, largura automática." },
+    { name: "appendTo", type: "HTMLElement | função | self | null", description: "Destino da janela. Padrão: self; null usa o body. O destino deve receber o tema e o CSS da biblioteca." },
+    { name: "background", type: "boolean", description: "Exibe a máscara e bloqueia a interação com o fundo. Padrão: true." },
+    { name: "backdrop", type: "boolean", description: "Quando true, impede fechar por clique na máscara. Padrão: false." },
+    { name: "closable", type: "boolean", description: "Permite fechar pelo botão e Escape. Padrão: true." },
+    { name: "draggable", type: "boolean", description: "Arraste pelo cabeçalho no documento de destino. Padrão: true; desativado enquanto maximizada." },
+    { name: "maximizable / maximized", type: "boolean", description: "Exibe o botão de maximizar e define o estado inicial maximizado. Padrão: false." },
+    { name: "position", type: "string", description: "center, top, bottom, left, right, top-left, top-right, bottom-left ou bottom-right." },
+    { name: "icon / iconPrefix", type: "string", description: "Ícone opcional do cabeçalho. Prefixo padrão: bi bi-; aceita pi pi-." },
+    { name: "className", type: "string", description: "Classes adicionais da janela." },
+    { name: "zIndex", type: "number", description: "Base do z-index do PrimeReact. Padrão: 1000." },
+] as const;

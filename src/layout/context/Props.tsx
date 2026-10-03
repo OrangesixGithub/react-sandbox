@@ -4,6 +4,7 @@ import { uiSections } from "./style/ui-sections";
 import { TypeBadges } from "../../core/TypeBadges";
 import { boxProps } from "../../components/box/Props";
 import { uiApiProps } from "../../core/style/ui-props";
+import { modalProps } from "../../components/modal/Props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
 import { selectProps } from "../../components/select/Props";
@@ -15,6 +16,7 @@ import { loadingProps } from "../../components/loading/Props";
 import { tabviewProps } from "../../components/tabview/Props";
 import type { ContextSelectionProps } from "../@types/context";
 import { calendarProps } from "../../components/calendar/Props";
+import { picklistProps } from "../../components/picklist/Props";
 import { checkboxProps } from "../../components/checkbox/Props";
 import { textareaProps } from "../../components/textarea/Props";
 import { lightboxProps } from "../../components/lightbox/Props";
@@ -29,6 +31,8 @@ const componentProps = {
     Accordion: accordionProps,
     TabView: tabviewProps,
     Message: messageProps,
+    Modal: modalProps,
+    PickList: picklistProps,
     Calendar: calendarProps,
     Editor: editorProps,
     Autocomplete: autocompleteProps,
