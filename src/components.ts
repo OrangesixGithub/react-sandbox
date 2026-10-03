@@ -19,7 +19,8 @@ export const componentNames = [
     "Calendar",
     "InputFilter",
     "Editor",
-    "TabView"
+    "TabView",
+    "Tooltip"
 ] as const;
 
 export type ComponentName = (typeof componentNames)[number];
@@ -45,6 +46,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Editor: { icon: "bi bi-pencil-square", iframe: true },
     Textarea: { icon: "bi bi-textarea-resize", iframe: true },
     InputFilter: { icon: "bi bi-funnel", iframe: true },
+    Tooltip: { icon: "bi bi-chat-square", iframe: true },
     TabView: { icon: "bi bi-segmented-nav", iframe: true },
 };
 

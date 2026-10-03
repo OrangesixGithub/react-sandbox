@@ -1,3 +1,4 @@
+import { tooltipProps } from "../../components/tooltip/Props";
 import { Title } from "./Title";
 import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
@@ -27,6 +28,7 @@ import { multiselectProps } from "../../components/multiselect/Props";
 import { autocompleteProps } from "../../components/autocomplete/Props";
 
 const componentProps = {
+    Tooltip: tooltipProps,
     PDF: pdfProps,
     Lightbox: lightboxProps,
     Loading: loadingProps,

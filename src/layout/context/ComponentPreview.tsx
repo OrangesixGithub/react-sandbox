@@ -1,3 +1,4 @@
+import { TooltipStage } from "../../components/tooltip/Stage";
 import { BoxStage } from "../../components/box/Stage";
 import { PDFStage } from "../../components/pdf/Stage";
 import type { PanelContentProps } from "../@types/panel";
@@ -32,6 +33,7 @@ export function ComponentPreview(props: PanelContentProps) {
     */
     return (
         <>
+            {props.selected === "Tooltip" && <TooltipStage/>}
             {props.selected === "PDF" && <PDFStage/>}
             {props.selected === "Lightbox" && <LightboxStage/>}
             {props.selected === "Loading" && <LoadingStage/>}
