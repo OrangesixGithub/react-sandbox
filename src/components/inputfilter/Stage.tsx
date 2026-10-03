@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { Legend } from "../../core/Legend";
 import { InputFilter, filterLegendAutocomplete, filterLegendData, filterLegendText } from "@orangesix/react/inputfilter";
@@ -24,7 +25,10 @@ export function InputFilterStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex flex-col gap-2">
                 <InputFilter
                     icon="fonts"
@@ -87,7 +91,7 @@ export function InputFilterStage() {
                     {filterLegendAutocomplete(autocomplete ?? undefined, departments)}
                 </Legend>
             </div>
-        </section>
+        </Box>
     );
 }
 

@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Legend } from "../../core/Legend";
@@ -22,7 +23,10 @@ export function RadioStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex flex-col gap-2">
                 <Radio
                     required
@@ -48,7 +52,7 @@ export function RadioStage() {
                     origin="HookForm"
                     value={formValue}/>
             </div>
-        </section>
+        </Box>
     );
 }
 

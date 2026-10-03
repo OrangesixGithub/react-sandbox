@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { Legend } from "../../core/Legend";
 import { Accordion } from "@orangesix/react/accordion";
@@ -21,7 +22,10 @@ export function AccordionStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex flex-col gap-2">
                 <Accordion
                     activeIndex={active}
@@ -41,7 +45,7 @@ export function AccordionStage() {
                     origin="state"
                     value={multiple}/>
             </div>
-        </section>
+        </Box>
     );
 }
 

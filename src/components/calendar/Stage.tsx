@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Legend } from "../../core/Legend";
@@ -19,7 +20,10 @@ export function CalendarStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <label className="flex items-center gap-2 text-sm">
                 <input
                     checked={multiple}
@@ -71,7 +75,7 @@ export function CalendarStage() {
                     origin="HookForm"
                     value={formValue}/>
             </div>
-        </section>
+        </Box>
     );
 }
 

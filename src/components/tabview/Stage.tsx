@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { Legend } from "../../core/Legend";
 import { Tabview } from "@orangesix/react/tabview";
@@ -20,7 +21,10 @@ export function TabviewStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex flex-col gap-2">
                 <Tabview
                     tabIndex={index}
@@ -35,7 +39,7 @@ export function TabviewStage() {
                     tabActiveRender={false}
                     tabs={tabs.slice(0, 2)}/>
             </div>
-        </section>
+        </Box>
     );
 }
 

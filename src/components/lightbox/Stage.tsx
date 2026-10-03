@@ -1,6 +1,7 @@
+import { Box } from "@orangesix/react/box";
 import { Lightbox } from "@orangesix/react/lightbox";
 
-const photo = (id: number, title: string) => `<img src="https://picsum.photos/id/${id}/1200/800" alt="${title}" title="${title}" width="240">`;
+const photo = (id: number, title: string) => `<img src="https://picsum.photos/id/${id}/1200/800" alt="${title}" title="${title}" width="240" class="rounded-lg">`;
 const html = [
     photo(1015, "Rio entre montanhas"),
     photo(1018, "Montanhas ao amanhecer"),
@@ -18,9 +19,12 @@ export function LightboxStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <Lightbox html={html}/>
-        </section>
+        </Box>
     );
 }
 

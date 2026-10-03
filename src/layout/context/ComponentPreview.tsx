@@ -1,4 +1,5 @@
 import { BoxStage } from "../../components/box/Stage";
+import { PDFStage } from "../../components/pdf/Stage";
 import type { PanelContentProps } from "../@types/panel";
 import { ModalStage } from "../../components/modal/Stage";
 import { RadioStage } from "../../components/radio/Stage";
@@ -31,6 +32,7 @@ export function ComponentPreview(props: PanelContentProps) {
     */
     return (
         <>
+            {props.selected === "PDF" && <PDFStage/>}
             {props.selected === "Lightbox" && <LightboxStage/>}
             {props.selected === "Loading" && <LoadingStage/>}
             {props.selected === "Accordion" && <AccordionStage/>}

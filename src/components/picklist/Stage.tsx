@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { Legend } from "../../core/Legend";
 import { PickList } from "@orangesix/react/picklist";
@@ -23,7 +24,10 @@ export function PickListStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex flex-col gap-2">
                 <PickList
                     data={data}
@@ -34,7 +38,7 @@ export function PickListStage() {
                     origin="state"
                     value={value}/>
             </div>
-        </section>
+        </Box>
     );
 }
 

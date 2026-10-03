@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@orangesix/react/button";
@@ -26,7 +27,10 @@ export function LoadingStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex gap-2">
                 <Button
                     label={visible ? "Ocultar" : "Exibir"}
@@ -67,7 +71,7 @@ export function LoadingStage() {
                 text="Tela cheia"
                 visible={fullscreen}
                 zindex={50}/>
-        </section>
+        </Box>
     );
 }
 

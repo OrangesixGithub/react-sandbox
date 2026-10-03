@@ -1,3 +1,4 @@
+import { Box } from "@orangesix/react/box";
 import { useState } from "react";
 import { Legend } from "../../core/Legend";
 import { Editor } from "@orangesix/react/editor";
@@ -13,7 +14,10 @@ export function EditorStage() {
     |------------------------------------------
     */
     return (
-        <section className="mb-10 flex w-full flex-col gap-6">
+        <Box
+            as="section"
+            className="mb-10 gap-6"
+            direction="column">
             <div className="flex flex-col gap-2">
                 <Editor
                     required
@@ -29,7 +33,7 @@ export function EditorStage() {
                     origin="state"
                     value={value}/>
             </div>
-        </section>
+        </Box>
     );
 }
 

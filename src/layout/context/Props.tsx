@@ -3,6 +3,7 @@ import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
 import { TypeBadges } from "../../core/TypeBadges";
 import { boxProps } from "../../components/box/Props";
+import { pdfProps } from "../../components/pdf/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { modalProps } from "../../components/modal/Props";
 import { radioProps } from "../../components/radio/Props";
@@ -26,6 +27,7 @@ import { multiselectProps } from "../../components/multiselect/Props";
 import { autocompleteProps } from "../../components/autocomplete/Props";
 
 const componentProps = {
+    PDF: pdfProps,
     Lightbox: lightboxProps,
     Loading: loadingProps,
     Accordion: accordionProps,
