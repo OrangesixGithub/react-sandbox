@@ -1,4 +1,3 @@
-import { tooltipProps } from "../../components/tooltip/Props";
 import { Title } from "./Title";
 import { uiProps } from "./style/ui-props";
 import { uiSections } from "./style/ui-sections";
@@ -6,6 +5,7 @@ import { TypeBadges } from "../../core/TypeBadges";
 import { boxProps } from "../../components/box/Props";
 import { pdfProps } from "../../components/pdf/Props";
 import { uiApiProps } from "../../core/style/ui-props";
+import { tableProps } from "../../components/table/Props";
 import { modalProps } from "../../components/modal/Props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
@@ -13,6 +13,7 @@ import { selectProps } from "../../components/select/Props";
 import { buttonProps } from "../../components/button/Props";
 import { editorProps } from "../../components/editor/Props";
 import { switchProps } from "../../components/switch/Props";
+import { tooltipProps } from "../../components/tooltip/Props";
 import { messageProps } from "../../components/message/Props";
 import { loadingProps } from "../../components/loading/Props";
 import { tabviewProps } from "../../components/tabview/Props";
@@ -28,6 +29,7 @@ import { multiselectProps } from "../../components/multiselect/Props";
 import { autocompleteProps } from "../../components/autocomplete/Props";
 
 const componentProps = {
+    Table: tableProps,
     Tooltip: tooltipProps,
     PDF: pdfProps,
     Lightbox: lightboxProps,

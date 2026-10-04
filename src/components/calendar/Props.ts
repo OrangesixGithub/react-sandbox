@@ -9,4 +9,5 @@ export const calendarProps = [
     { name: "appendTo", type: "self | HTMLElement | função", description: "Destino do painel." },
     { name: "required / disabled / readonly", type: "boolean", description: "Estados do campo." },
     { name: "error / ref / inputClassName", type: "string | Ref", description: "Feedback, referência HTML e classe do campo." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

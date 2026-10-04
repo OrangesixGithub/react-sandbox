@@ -8,4 +8,5 @@ export const radioProps = [
     { name: "readonlyType / readonlyClassName", type: "label | field / string", description: "No Controlled, permite exibir a seleção como texto." },
     { name: "error", type: "string", description: "Mensagem de erro; HookForm também usa a validação do formulário." },
     { name: "id / name / label / size", type: "string / percentual", description: "Identificação do grupo, rótulo e largura responsiva." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

@@ -13,4 +13,5 @@ export const multiselectProps = [
     { name: "readonlyType / readonlyClassName", type: "label | field / string", description: "No Controlled, permite exibir os nomes selecionados como texto." },
     { name: "error", type: "string", description: "Mensagem de erro, incluindo validação pelo HookForm." },
     { name: "onShow / onHide", type: "função", description: "Callbacks ao abrir e fechar o painel." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

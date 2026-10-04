@@ -8,4 +8,5 @@ export const autocompleteProps = [
     { name: "appendTo", type: "self | HTMLElement", description: "Destino do painel; padrão self." },
     { name: "required / disabled / readonly / error", type: "boolean / string", description: "Obrigatoriedade, bloqueio de edição e feedback." },
     { name: "size / css / className", type: "ApiSizeProps / objeto / string", description: "Largura responsiva e personalização do Box." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

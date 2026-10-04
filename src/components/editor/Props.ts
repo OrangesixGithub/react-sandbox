@@ -7,4 +7,5 @@ export const editorProps = [
     { name: "icon / iconPrefix", type: "string", description: "Ícone do rótulo e prefixo da barra: bi bi- por padrão ou pi pi-." },
     { name: "ref", type: "Ref<HTMLDivElement>", description: "Referência à área editável para foco." },
     { name: "size / css / className", type: "ApiSizeProps / objeto / string", description: "Largura responsiva e personalização do Box." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

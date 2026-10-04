@@ -8,4 +8,5 @@ export const selectProps = [
     { name: "readonlyType / readonlyClassName", type: "label | field / string", description: "No modo Controlled, exibe o nome da opção como texto ou campo." },
     { name: "error", type: "string", description: "Mensagem de erro; no HookForm também exibe erros de validação." },
     { name: "ref", type: "Ref<HTMLSelectElement>", description: "Referência ao select nativo para envio do formulário." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

@@ -7,4 +7,5 @@ export const inputfilterProps = [
     { name: "autocompleteScrollHeight", type: "string", description: "Altura da caixa de sugestões do tipo `autocomplete`." },
     { name: "error", type: "string", description: "Mensagem de erro exibida abaixo do campo e estilo inválido." },
     { name: "required / disabled / readonly", type: "boolean", description: "Estados do campo." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;

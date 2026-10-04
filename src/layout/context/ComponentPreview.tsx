@@ -1,7 +1,7 @@
-import { TooltipStage } from "../../components/tooltip/Stage";
 import { BoxStage } from "../../components/box/Stage";
 import { PDFStage } from "../../components/pdf/Stage";
 import type { PanelContentProps } from "../@types/panel";
+import { TableStage } from "../../components/table/Stage";
 import { ModalStage } from "../../components/modal/Stage";
 import { RadioStage } from "../../components/radio/Stage";
 import { InputStage } from "../../components/input/Stage";
@@ -9,6 +9,7 @@ import { EditorStage } from "../../components/editor/Stage";
 import { SwitchStage } from "../../components/switch/Stage";
 import { ButtonStage } from "../../components/button/Stage";
 import { SelectStage } from "../../components/select/Stage";
+import { TooltipStage } from "../../components/tooltip/Stage";
 import { MessageStage } from "../../components/message/Stage";
 import { LoadingStage } from "../../components/loading/Stage";
 import { TabviewStage } from "../../components/tabview/Stage";
@@ -33,6 +34,7 @@ export function ComponentPreview(props: PanelContentProps) {
     */
     return (
         <>
+            {props.selected === "Table" && <TableStage/>}
             {props.selected === "Tooltip" && <TooltipStage/>}
             {props.selected === "PDF" && <PDFStage/>}
             {props.selected === "Lightbox" && <LightboxStage/>}

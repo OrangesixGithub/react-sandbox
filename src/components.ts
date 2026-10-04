@@ -20,6 +20,7 @@ export const componentNames = [
     "InputFilter",
     "Editor",
     "TabView",
+    "Table",
     "Tooltip"
 ] as const;
 
@@ -47,6 +48,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Textarea: { icon: "bi bi-textarea-resize", iframe: true },
     InputFilter: { icon: "bi bi-funnel", iframe: true },
     Tooltip: { icon: "bi bi-chat-square", iframe: true },
+    Table: { icon: "bi bi-table", iframe: false },
     TabView: { icon: "bi bi-segmented-nav", iframe: true },
 };
 

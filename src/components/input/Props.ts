@@ -8,4 +8,5 @@ export const inputProps = [
     { name: "number*", type: "número / string", description: "Moeda, limites, casas decimais, prefixo e sufixo." },
     { name: "password*", type: "boolean / template", description: "Visibilidade, feedback e templates de senha." },
     { name: "required / disabled / readonly", type: "boolean", description: "Estados do campo." },
+    { name: "showLabel", type: "boolean", description: "Exibe o rótulo do campo (padrão true). false oculta visualmente label, ícone e asterisco sem reservar espaço, mantendo o label acessível." },
 ] as const;
