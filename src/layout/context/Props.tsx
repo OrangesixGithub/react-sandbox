@@ -4,6 +4,7 @@ import { uiSections } from "./style/ui-sections";
 import { TypeBadges } from "../../core/TypeBadges";
 import { boxProps } from "../../components/box/Props";
 import { pdfProps } from "../../components/pdf/Props";
+import { utilsProps } from "../../components/utils/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { tableProps } from "../../components/table/Props";
 import { modalProps } from "../../components/modal/Props";
@@ -52,6 +53,7 @@ const componentProps = {
     MultiSelect: multiselectProps,
     Textarea: textareaProps,
     InputFilter: inputfilterProps,
+    Utils: utilsProps,
 };
 
 /**

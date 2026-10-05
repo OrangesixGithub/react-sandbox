@@ -2,6 +2,7 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
+import { routes } from "./routes/index.ts";
 import tailwindcss from "@tailwindcss/vite";
 import { existsSync, readFileSync } from "node:fs";
 
@@ -43,6 +44,7 @@ export default defineConfig(({ mode }) => {
                     });
                 },
             },
+            routes(),
             react(),
             tailwindcss(),
         ],

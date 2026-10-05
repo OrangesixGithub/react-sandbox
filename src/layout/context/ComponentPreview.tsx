@@ -1,5 +1,6 @@
 import { BoxStage } from "../../components/box/Stage";
 import { PDFStage } from "../../components/pdf/Stage";
+import { UtilsStage } from "../../components/utils/Stage";
 import type { PanelContentProps } from "../@types/panel";
 import { TableStage } from "../../components/table/Stage";
 import { ModalStage } from "../../components/modal/Stage";
@@ -57,6 +58,7 @@ export function ComponentPreview(props: PanelContentProps) {
             {props.selected === "InputFilter" && <InputFilterStage/>}
             {props.selected === "Radio" && <RadioStage/>}
             {props.selected === "Select" && <SelectStage/>}
+            {props.selected === "Utils" && <UtilsStage/>}
         </>
     );
 }

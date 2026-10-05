@@ -44,6 +44,14 @@ export function Preview(props: PanelContentProps) {
         theme
     ]);
 
+    // A snackbar do utils é inserida no <body>, fora do canvas: replica nele o tema da prévia
+    useEffect(() => {
+        document.body.dataset.theme = theme;
+        return () => {
+            delete document.body.dataset.theme;
+        };
+    }, [theme]);
+
     /*
     |------------------------------------------
     | render() - Renderização do componente

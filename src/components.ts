@@ -21,7 +21,8 @@ export const componentNames = [
     "Editor",
     "TabView",
     "Table",
-    "Tooltip"
+    "Tooltip",
+    "Utils"
 ] as const;
 
 export type ComponentName = (typeof componentNames)[number];
@@ -50,6 +51,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     Tooltip: { icon: "bi bi-chat-square", iframe: true },
     Table: { icon: "bi bi-table", iframe: false },
     TabView: { icon: "bi bi-segmented-nav", iframe: true },
+    Utils: { icon: "bi bi-tools", iframe: true },
 };
 
 export function componentId(name: ComponentName) {

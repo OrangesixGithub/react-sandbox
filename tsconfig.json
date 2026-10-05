@@ -15,5 +15,5 @@
       "@orangesix/react/*": ["../react/src/*"]
     }
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src", "routes", "vite.config.ts"]
 }

@@ -7,8 +7,8 @@
     "dev:package": "vite --mode package",
     "build": "tsc --noEmit && vite build",
     "build:package": "tsc --noEmit --project tsconfig.package.json && vite build --mode package",
-    "lint": "eslint src vite.config.ts",
-    "lint:fix": "eslint src vite.config.ts --fix"
+    "lint": "eslint src routes vite.config.ts",
+    "lint:fix": "eslint src routes vite.config.ts --fix"
   },
   "dependencies": {
     "bootstrap-icons": "^1.13.1",
