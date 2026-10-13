@@ -10,7 +10,8 @@ export const tablepivotProps = [
     { name: "toolbar / expanded", type: "boolean / boolean", description: "Exibe a barra com o resumo, a lista de campos e as ações (padrão: true). expanded inicia as linhas expandidas (padrão: false)." },
     { name: "onChange", type: "(layout) => void", description: "Executado quando o usuário aplica alterações na lista de campos. O layout tem rows, columns, values, filters e sort, no formato das props." },
     { name: "onConditionalFormattingChange", type: "(rules) => void", description: "Recebe as regras ao aplicar no painel de Formatação condicional, permitindo salvar e reaplicar pela prop conditionalFormatting." },
+    { name: "storageKey", type: "string", description: "Chave das visões salvas pelo botão Visões (localStorage do navegador). Use uma por tela para não misturar pivots diferentes. Padrão: id." },
     { name: "styleCell", type: "(cell, meta) => void", description: "Personaliza as células visíveis da grade a cada renderização." },
-    { name: "ref", type: "expandAll / collapseAll / exportCsv / viewer / table", description: "Ações da barra por código e acesso avançado ao Perspective." },
+    { name: "ref", type: "expandAll / collapseAll / exportCsv / exportXlsx / copy / viewer / table", description: "Ações da barra por código (copy copia a tabela para colar no Excel; exportXlsx baixa .xlsx com a formatação) e acesso avançado ao Perspective." },
     { name: "id / className / size / css", type: "string / string / SizeProps / CSSProperties", description: "Propriedades compartilhadas do Box." },
 ] as const;

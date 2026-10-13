@@ -7,8 +7,11 @@ import { PrimeReactProvider } from "primereact/api";
 import { windowMessageEvent } from "@orangesix/react/utils";
 import { initializeLightbox } from "@orangesix/react/lightbox";
 import { IframePreview } from "./layout/context/IframePreview";
+import { initializeTablePivot } from "@orangesix/react/tablepivot";
 
 initializeLightbox();
+// Permite que pivots criados no iframe sejam renderizados na janela principal (ex.: modal com appendTo no body)
+initializeTablePivot();
 
 // Snackbar do utils: as mensagens enviadas pelo iframe (sendMessage) são exibidas na janela principal
 if (window.self === window.top) {

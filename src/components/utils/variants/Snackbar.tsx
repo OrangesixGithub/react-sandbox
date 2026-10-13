@@ -8,7 +8,7 @@ import type { IUtilsMessageOptions } from "@orangesix/react/utils";
 type Library = keyof IUtilsMessageOptions;
 
 const snackbars = [
-    { type: "success", color: "success", title: "Registro salvo", text: "As alterações foram gravadas com sucesso." },
+    { type: "success", color: "success", title: "Registro <em>salvo</em>", text: "As alterações foram gravadas com <strong>sucesso</strong>.<br>Você pode continuar." },
     { type: "warning", color: "warning", title: "Armazenamento quase cheio", text: "Você já usou 92% do espaço disponível." },
     { type: "error", color: "danger", title: "Falha ao salvar", text: "Algo deu errado. Tente novamente." },
     { type: "info", color: "info", title: "Nova funcionalidade", text: "A busca rápida está disponível: pressione Ctrl+K." },
