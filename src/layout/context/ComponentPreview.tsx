@@ -3,6 +3,7 @@ import { PDFStage } from "../../components/pdf/Stage";
 import { UtilsStage } from "../../components/utils/Stage";
 import type { PanelContentProps } from "../@types/panel";
 import { TableStage } from "../../components/table/Stage";
+import { TablePivotStage } from "../../components/tablepivot/Stage";
 import { ModalStage } from "../../components/modal/Stage";
 import { RadioStage } from "../../components/radio/Stage";
 import { InputStage } from "../../components/input/Stage";
@@ -36,6 +37,7 @@ export function ComponentPreview(props: PanelContentProps) {
     return (
         <>
             {props.selected === "Table" && <TableStage/>}
+            {props.selected === "TablePivot" && <TablePivotStage/>}
             {props.selected === "Tooltip" && <TooltipStage/>}
             {props.selected === "PDF" && <PDFStage/>}
             {props.selected === "Lightbox" && <LightboxStage/>}

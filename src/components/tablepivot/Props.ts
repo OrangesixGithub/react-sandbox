@@ -1,0 +1,16 @@
+export const tablepivotProps = [
+    { name: "conditionalFormatting", type: "TablePivotConditionalRule[]", description: "Regras numéricas por campo ou para todos os valores: comparação, limite ou intervalo, includeTotals e style (cores, negrito, itálico e sublinhado). A última regra correspondente tem prioridade." },
+    { name: "data", type: "object[]", description: "Registros do pivot. Sem limite de tamanho de licença: o motor é o Perspective (WASM), carregado só nas telas com pivot." },
+    { name: "rows / columns", type: "string[]", description: "Campos agrupados nas linhas (na ordem da hierarquia) e nas colunas." },
+    { name: "values", type: "Array<string | { field, aggregation }>", description: "Valores das células. aggregation: sum, count, avg, min, max ou distinct (padrão: sum para números, count para os demais). Sem a prop, soma os campos numéricos." },
+    { name: "filters", type: "Record<campo, valores[]>", description: "Exibe só os valores informados. Lista vazia mantém o campo na área Filtros sem restringir." },
+    { name: "sort", type: "Record<campo, \"asc\" | \"desc\">", description: "Ordenação dos campos de linhas e colunas. Padrão: crescente." },
+    { name: "labels", type: "Record<campo, string>", description: "Nomes exibidos dos campos, ex.: { regiao: \"Região\" }." },
+    { name: "title / height", type: "string / string | number", description: "Título da barra e altura máxima do componente (padrão: 500). A tabela cresce conforme o conteúdo até atingir esse limite." },
+    { name: "toolbar / expanded", type: "boolean / boolean", description: "Exibe a barra com o resumo, a lista de campos e as ações (padrão: true). expanded inicia as linhas expandidas (padrão: false)." },
+    { name: "onChange", type: "(layout) => void", description: "Executado quando o usuário aplica alterações na lista de campos. O layout tem rows, columns, values, filters e sort, no formato das props." },
+    { name: "onConditionalFormattingChange", type: "(rules) => void", description: "Recebe as regras ao aplicar no painel de Formatação condicional, permitindo salvar e reaplicar pela prop conditionalFormatting." },
+    { name: "styleCell", type: "(cell, meta) => void", description: "Personaliza as células visíveis da grade a cada renderização." },
+    { name: "ref", type: "expandAll / collapseAll / exportCsv / viewer / table", description: "Ações da barra por código e acesso avançado ao Perspective." },
+    { name: "id / className / size / css", type: "string / string / SizeProps / CSSProperties", description: "Propriedades compartilhadas do Box." },
+] as const;

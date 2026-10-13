@@ -21,6 +21,7 @@ export const componentNames = [
     "Editor",
     "TabView",
     "Table",
+    "TablePivot",
     "Tooltip",
     "Utils"
 ] as const;
@@ -50,6 +51,7 @@ export const components: Record<ComponentName, { icon: string; iframe: boolean }
     InputFilter: { icon: "bi bi-funnel", iframe: true },
     Tooltip: { icon: "bi bi-chat-square", iframe: true },
     Table: { icon: "bi bi-table", iframe: false },
+    TablePivot: { icon: "bi bi-grid-3x3", iframe: false },
     TabView: { icon: "bi bi-segmented-nav", iframe: true },
     Utils: { icon: "bi bi-tools", iframe: true },
 };

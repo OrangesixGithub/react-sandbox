@@ -11,28 +11,28 @@
     "lint:fix": "eslint src routes vite.config.ts --fix"
   },
   "dependencies": {
-    "bootstrap-icons": "^1.13.1",
+    "bootstrap-icons": "^1.13.2",
     "clsx": "^2.1.1",
-    "motion": "^14.0.0",
+    "motion": "^14.2.0",
     "primereact": "10.9.9",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-hook-form": "^7.89.0",
+    "react-hook-form": "^7.90.0",
     "tailwind-variants": "^3.3.1",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.71.0",
-    "@typescript-eslint/parser": "^8.71.0",
-    "@vitejs/plugin-react": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.71.2",
+    "@typescript-eslint/parser": "^8.71.2",
+    "@vitejs/plugin-react": "^6.1.2",
     "eslint": "^10.12.0",
     "eslint-plugin-perfectionist": "^5.12.1",
     "typescript": "^6.0.3",
-    "vite": "^8.3.2"
+    "vite": "^8.3.4"
   }
 }

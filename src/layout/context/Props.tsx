@@ -7,6 +7,7 @@ import { pdfProps } from "../../components/pdf/Props";
 import { utilsProps } from "../../components/utils/Props";
 import { uiApiProps } from "../../core/style/ui-props";
 import { tableProps } from "../../components/table/Props";
+import { tablepivotProps } from "../../components/tablepivot/Props";
 import { modalProps } from "../../components/modal/Props";
 import { radioProps } from "../../components/radio/Props";
 import { inputProps } from "../../components/input/Props";
@@ -31,6 +32,7 @@ import { autocompleteProps } from "../../components/autocomplete/Props";
 
 const componentProps = {
     Table: tableProps,
+    TablePivot: tablepivotProps,
     Tooltip: tooltipProps,
     PDF: pdfProps,
     Lightbox: lightboxProps,
